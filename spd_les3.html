@@ -65,6 +65,7 @@ Chris van Uffelen
 <li>Start om 9.15</li>
 <li>Analyse Oefeningen</li>
 <li>Code Dingetjes</li>
+<li>Oefenopgaven module 2</li>
 </ul>
 </div>
 <div id="aanwezigheidsregistratie" class="slide section level1">
@@ -157,15 +158,16 @@ Chris van Uffelen
 <div id="herhaling---functies" class="slide section level1">
 <h1>Herhaling - Functies</h1>
 <ul>
-<li><p>Een functie doet een klus voor je</p>
+<li>Een functie doet een klus voor je
 <ul>
 <li>teken een lijn blok</li>
 <li>print een waarde</li>
 <li>doet een instelling (<code>fill()</code>, <code>smooth()</code>)</li>
 </ul></li>
-<li><p>Een functie berekent een waarde voor je</p>
+<li>Een functie berekent een waarde voor je
 <ul>
 <li><code>max(1, 12, 3)</code></li>
+<li><code>a = 34 + max(1, 12, 3)</code></li>
 </ul></li>
 </ul>
 </div>
@@ -176,6 +178,35 @@ Chris van Uffelen
 <span class="co">// fout:                       *</span>
 <span class="fu">println</span>( <span class="fu">constrain</span>(<span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">100</span>); );</code></pre></div>
 <p>De <code>;</code> sluit een <em>statement</em> af, een (geneste) instructie.</p>
+</div>
+<div id="herhaling---active-en-static-modes" class="slide section level1">
+<h1>Herhaling - Active en Static Modes</h1>
+<ul>
+<li><p>Static Mode: Applicatie loopt door code en is klaar</p></li>
+<li><p>Active Mode: Applicatie blijft wachten op invoer</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>() {
+    <span class="fu">println</span>(<span class="st">&quot;initialiseer&quot;</span>);
+}
+
+<span class="dt">void</span> <span class="fu">draw</span>() {
+    <span class="fu">println</span>(<span class="st">&quot;draw&quot;</span>);
+}</code></pre></div>
+</div>
+<div id="herhaling---scope" class="slide section level1">
+<h1>Herhaling - Scope</h1>
+<p><strong>global scope</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> hoogte;
+
+<span class="dt">void</span> <span class="fu">setup</span>() {
+    hoogte = <span class="dv">100</span>;
+}
+
+<span class="dt">void</span> <span class="fu">draw</span>() {
+    hoogte = hoogte + <span class="dv">10</span>;
+
+    <span class="co">// doe iets met hoogte</span>
+}</code></pre></div>
 </div>
 <div id="herhaling---declaratie-initialisatie" class="slide section level1">
 <h1>Herhaling - Declaratie, Initialisatie</h1>
@@ -190,6 +221,9 @@ Chris van Uffelen
 <li>vul het stukje geheugen met een waarde</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">a = <span class="dv">3</span>;</code></pre></div>
+</div>
+<div id="oefeningen" class="slide section level1">
+<h1>Oefeningen</h1>
 </div>
 </body>
 </html>
