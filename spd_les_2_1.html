@@ -66,6 +66,7 @@ Chris van Uffelen
 <li>Moduleopgave Module 2</li>
 <li>Twee vragen uit de proeftoets</li>
 <li>Vooruitblik Module 3</li>
+<li>Werken aan huiswerk voor Donderdag / Vragen</li>
 </ul>
 </div>
 <div id="lesplan-komende-weken" class="slide section level1">
@@ -267,6 +268,12 @@ ControlP5 theControl;
 </div>
 <div id="vragen-proeftoets" class="slide section level1">
 <h1>Vragen Proeftoets</h1>
+<ul>
+<li>Doe de oefenopgave op <strong>papier</strong>.</li>
+<li>Doe je best <strong>werkende</strong> code te schrijven.</li>
+<li>Doe je best <strong>leesbare</strong> code te schrijven.</li>
+<li>API referentie</li>
+</ul>
 </div>
 <div id="vraag-1" class="slide section level1">
 <h1>Vraag 1</h1>
@@ -277,11 +284,11 @@ ControlP5 theControl;
 <span class="dt">float</span> bedragExclBtw = <span class="dv">250</span>;
 <span class="dt">float</span> btwPercentage = <span class="dv">19</span>;
 
-<span class="dt">float</span> bedragInclBtw = bedragExclBtw + bedragExclBtw * btwPercentage / <span class="fl">100.0</span>;
+<span class="dt">float</span> btw = bedragExclBtw * btwPercentage / <span class="fl">100.0</span>;
 
 <span class="fu">text</span>(<span class="st">&quot;exclusief btw: &quot;</span> + bedragExclBtw,<span class="dv">10</span>,<span class="dv">10</span>);
-<span class="fu">text</span>(<span class="st">&quot;btw: &quot;</span> + btwPercentage,<span class="dv">10</span>,<span class="dv">30</span>);
-<span class="fu">text</span>(<span class="st">&quot;inclusief btw: &quot;</span> + bedragInclBtw,<span class="dv">10</span>,<span class="dv">50</span>);</code></pre></div>
+<span class="fu">text</span>(<span class="st">&quot;btw: &quot;</span> + btw,<span class="dv">10</span>,<span class="dv">30</span>);
+<span class="fu">text</span>(<span class="st">&quot;inclusief btw: &quot;</span> + (bedragExclBtw + btw),<span class="dv">10</span>,<span class="dv">50</span>);</code></pre></div>
 </div>
 <div id="vraag-2" class="slide section level1">
 <h1>Vraag 2</h1>
@@ -315,6 +322,9 @@ ControlP5 theControl;
 </div>
 <div id="en-...-of-..." class="slide section level1">
 <h1>En ... Of ...</h1>
+</div>
+<div id="verder-met-werk-voor-donderdag" class="slide section level1">
+<h1>(Verder met werk voor Donderdag)</h1>
 </div>
 </body>
 </html>
