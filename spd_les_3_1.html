@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>Week 3, Les 1 SPD</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Week 3, Les 1 SPD</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">Sep 2015</p>
+</div>
+<div id="vandaag" class="slide section level1">
+<h1>Vandaag</h1>
+<ul>
+<li>Moduleopgaven 4</li>
+<li>Werken aan huiswerk voor Donderdag / Vragen</li>
+</ul>
+</div>
+<div id="lesplan-komende-weken" class="slide section level1">
+<h1>Lesplan Komende Weken</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Week</th>
+<th align="left">Les</th>
+<th align="left">Voorbereiding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">Module 4, Opg 4</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">WOE</td>
+<td align="left"><strong>TOETS MOD 1 &amp; 2</strong></td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">2</td>
+<td align="left">MOpg 4</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left">Module 5, Opg 5</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">1</td>
+<td align="left">MOpg 5</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">Module 6, Opg 6</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">MOpg 6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="aanwezigheidsregistratie" class="slide section level1">
+<h1>Aanwezigheidsregistratie</h1>
+</div>
+<div id="opgave-4.1" class="slide section level1">
+<h1>Opgave 4.1</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="dt">int</span> a = <span class="dv">6</span>;
+  <span class="dt">int</span> b = <span class="dv">12</span>;
+  <span class="fu">change</span>(a, b);
+  <span class="fu">println</span>(a + b);
+}
+<span class="dt">void</span> <span class="fu">change</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {
+  a=a*<span class="dv">4</span>;
+  b=b*<span class="dv">3</span>;
+}</code></pre></div>
+</div>
+<div id="opgave-4.2" class="slide section level1">
+<h1>Opgave 4.2</h1>
+<p>Zet <code>Hallo &lt;naam&gt;, hoe gaat het met je</code> in vier kwadranten op het scherm</p>
+<ul>
+<li>De functie <code>text()</code> mag maar één keer in de code voor komen.</li>
+</ul>
+</div>
+<div id="code" class="slide section level1">
+<h1>Code</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>() {
+   <span class="fu">size</span>(<span class="dv">600</span>, <span class="dv">500</span>); 
+}
+
+<span class="dt">void</span> <span class="fu">draw</span>() {
+  <span class="fu">groet</span>(<span class="st">&quot;Harry&quot;</span>, -<span class="dv">1</span>, -<span class="dv">1</span>);
+  <span class="fu">groet</span>(<span class="st">&quot;Marianne&quot;</span>, <span class="dv">1</span>, -<span class="dv">1</span>);
+  <span class="fu">groet</span>(<span class="st">&quot;Ludo&quot;</span>, <span class="dv">1</span>, <span class="dv">1</span>);
+  <span class="fu">groet</span>(<span class="st">&quot;Maaike&quot;</span>, -<span class="dv">1</span>, <span class="dv">1</span>);
+}
+
+<span class="dt">void</span> <span class="fu">groet</span>(String naam, <span class="dt">int</span> fx, <span class="dt">int</span> fy) {
+  <span class="fu">textAlign</span>(CENTER, CENTER);
+  String msg = <span class="st">&quot;Hallo &quot;</span> + naam + <span class="st">&quot;, hoe gaat het met je?&quot;</span>;
+  <span class="fu">text</span>(msg, width/<span class="dv">2</span> + fx * width/<span class="dv">4</span>, height/<span class="dv">2</span> + fy * height/<span class="dv">4</span>);
+}</code></pre></div>
+</div>
+<div id="opgave-4.3" class="slide section level1">
+<h1>Opgave 4.3</h1>
+<p>Oppervlak parallelogram</p>
+<p><span class="math display">\[O = (a + b)/2 * h\]</span></p>
+</div>
+<div id="code-1" class="slide section level1">
+<h1>Code</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> somBovenOnder;
+<span class="dt">int</span> bovenBreuk;
+<span class="dt">int</span> oppervlakte;
+
+<span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="fu">berekenOppervlakte</span>( <span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">10</span>);
+  <span class="fu">println</span>(<span class="st">&quot;Oppervlakte is: &quot;</span> + oppervlakte);
+}
+
+<span class="dt">void</span> <span class="fu">berekenOppervlakte</span>(<span class="dt">int</span> hoogte, <span class="dt">int</span> lengteBoven, <span class="dt">int</span> lengteOnder) {
+  <span class="fu">berekenSomBovenOnder</span>( lengteBoven, lengteOnder );
+  <span class="fu">multiplyMetHoogte</span>(hoogte);
+  <span class="fu">deelDoorTwee</span>(); 
+}
+
+<span class="dt">void</span> <span class="fu">berekenSomBovenOnder</span>(<span class="dt">int</span> lengteBoven, <span class="dt">int</span> lengteOnder) {
+  somBovenOnder = lengteBoven + lengteOnder;
+}
+
+<span class="dt">void</span> <span class="fu">multiplyMetHoogte</span>(<span class="dt">int</span> hoogte) {
+  bovenBreuk = hoogte * somBovenOnder; 
+}
+
+<span class="dt">void</span> <span class="fu">deelDoorTwee</span>() {
+  oppervlakte = bovenBreuk / <span class="dv">2</span>;   
+}</code></pre></div>
+</div>
+<div id="extra-oefeningen" class="slide section level1">
+<h1>Extra Oefeningen</h1>
+<ul>
+<li><p>Functie voor stelling van Pythagoras <span class="math inline">\(a^2 + b^2 = c^2\)</span></p>
+<p>Bereken <span class="math inline">\(c\)</span> wanneer <span class="math inline">\(a\)</span> en <span class="math inline">\(b\)</span> gekend zijn.</p></li>
+<li><p>Functie voor een dobbelsteen.</p>
+<p>Bereken een willekeurige waarde tussen 1 en 6</p></li>
+<li><p>Functie die &quot;negatief&quot;, &quot;positief&quot; of &quot;nul&quot; terug geeft op basis van invoer int.</p></li>
+<li><p>Functie die een rechthoek tekent op basis van twee co-orinaten en het oppervlak teruggeeft.</p></li>
+</ul>
+</div>
+</body>
+</html>
