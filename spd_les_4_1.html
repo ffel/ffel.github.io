@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>Week 4, Les 1 SPD</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Week 4, Les 1 SPD</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">Sep 2015</p>
+</div>
+<div id="vandaag" class="slide section level1">
+<h1>Vandaag</h1>
+<ul>
+<li>Wat opviel in de toets</li>
+<li>Moduleopgaven - Analyse</li>
+<li>Gordijnencasus - Analyse</li>
+</ul>
+</div>
+<div id="lesplan-komende-weken" class="slide section level1">
+<h1>Lesplan Komende Weken</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Week</th>
+<th align="left">Les</th>
+<th align="left">Voorbereiding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">1</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">MOpg 5 + <strong>Extra Opg</strong></td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">Module 6, Opg 6</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">1</td>
+<td align="left">MOpg 6</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">Module 7, Opg 7</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">3</td>
+<td align="left">MOpg 7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="aanwezigheidsregistratie" class="slide section level1">
+<h1>Aanwezigheidsregistratie</h1>
+</div>
+<div id="toets---analyse" class="slide section level1">
+<h1>Toets - Analyse</h1>
+<p>Opgave 4, de driehoek.</p>
+<ul>
+<li>Maak een schets,</li>
+<li>Je kan je uitwerking controleren!</li>
+</ul>
+</div>
+<div id="toets---volgorde-van-instructies" class="slide section level1">
+<h1>Toets - volgorde van instructies</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> breedte = hoogte * <span class="dv">3</span>/<span class="dv">2</span>;
+<span class="dt">int</span> hoogte = <span class="dv">400</span>;</code></pre></div>
+</div>
+<div id="toets---variabele-namen" class="slide section level1">
+<h1>Toets - Variabele namen</h1>
+<ul>
+<li><code>x</code> en <code>y</code> voor een positie,</li>
+<li><code>breedte</code> (<code>width</code>) en <code>hoogte</code> (<code>height</code>) voor een lengte of grootte</li>
+</ul>
+<p>Dus,</p>
+<p><code>windowX</code> en <code>windowY</code> leest lastig</p>
+<blockquote>
+<p>maak het de corrector sowieso zo eenvoudig mogelijk (&quot;z.o.z&quot;)</p>
+</blockquote>
+</div>
+<div id="toets---wanneer-een-variabele" class="slide section level1">
+<h1>Toets - Wanneer een variabele</h1>
+<ul class="incremental">
+<li>Wanneer een waarde vaak wordt gebruikt (<code>marge</code>)</li>
+<li>Wanneer je wilt voorbereiden op <em>user input</em>
+<ul class="incremental">
+<li>of <em>config file</em>, of <em>data base</em></li>
+</ul></li>
+<li>Wanneer je code beter leesbaar wordt (tussenresultaat)</li>
+</ul>
+</div>
+<div id="toets---rectmode" class="slide section level1">
+<h1>Toets - rectMode</h1>
+<p><code>CENTER</code> mode:</p>
+<ul>
+<li>de eerste twee waarden zijn het <em>centrum</em> van de rechthoek</li>
+</ul>
+</div>
+<div id="toets---te-laat-constrain" class="slide section level1">
+<h1>Toets - te laat constrain</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> windowW = <span class="dv">600</span>;
+<span class="dt">int</span> windowH = windowW * <span class="dv">2</span>/<span class="dv">3</span>;
+windowW = <span class="fu">constrain</span>(windowW, <span class="dv">400</span>, <span class="dv">800</span>*<span class="dv">3</span>/<span class="dv">2</span>);</code></pre></div>
+</div>
+<div id="toets---constrain" class="slide section level1">
+<h1>Toets - Constrain</h1>
+<ul class="incremental">
+<li>als niets wordt gezegd over minimale en maximale grootte: geen constrain</li>
+<li><code>int breedte = constrain(600, 400, 800);</code> is <em>raar</em>,</li>
+<li><code>int w = 600; int breedte = constrain(w, 400, 600);</code> is logischer</li>
+<li>De mooiste: <code>constrain(200, 100, pow(10, 999999))</code>
+<ul class="incremental">
+<li>zandkorrels: <code>pow(10, 19);</code></li>
+<li>sterren: <code>pow(10, 23)</code>;</li>
+<li>atomen: <code>pow(10, 80)</code>;</li>
+</ul></li>
+</ul>
+</div>
+<div id="analyse---schets" class="slide section level1">
+<h1>Analyse - Schets</h1>
+<ul>
+<li><p>Het helpt als je weet wat je moet maken</p>
+<p>(zie opgave 4 in de toets)</p></li>
+<li><p>Begin met een schets</p></li>
+</ul>
+</div>
+<div id="analyse---gedrag---testplan" class="slide section level1">
+<h1>Analyse - Gedrag - Testplan</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Test</th>
+<th align="left">Handeling</th>
+<th align="left">Waarde</th>
+<th align="left">Verwacht</th>
+<th align="left">Werkelijk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1.1</td>
+<td align="left">drag lengte</td>
+<td align="left">naar max</td>
+<td align="left">bmi daalt</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">1.2</td>
+<td align="left">drag gewicht</td>
+<td align="left">naar min</td>
+<td align="left">bmi stijgt</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">2.1</td>
+<td align="left">lengte / gewicht</td>
+<td align="left">max / min</td>
+<td align="left">bmi hoog zichtbaar</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">2.2</td>
+<td align="left">lengte / gewicht</td>
+<td align="left">min / max</td>
+<td align="left">bmi laag zichtbaar</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">3.1</td>
+<td align="left">lengte / gewicht</td>
+<td align="left">182 / 80</td>
+<td align="left">bmi 24.2 (normaal)</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">3.2</td>
+<td align="left">lengte / gewicht</td>
+<td align="left">190 / 60</td>
+<td align="left">bmi 16.6 (onderg)</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">3.1</td>
+<td align="left">lengte / gewicht</td>
+<td align="left">160 / 86</td>
+<td align="left">bmi 33.6 (obees)</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="analyse---overzicht" class="slide section level1">
+<h1>Analyse - Overzicht</h1>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="51%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Module (tab)</th>
+<th align="left">Variabele / Event / Methode</th>
+<th align="left">Toelichting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bmi</td>
+<td align="left">float berekenBmi( float lengte, float gewicht)</td>
+<td align="left">bereken bmi op basis van lengte (cm) en gewicht</td>
+</tr>
+<tr class="even">
+<td align="left">slider</td>
+<td align="left">void tekenSlider(float x, float y, float w, float h, int pos, int nrPos)</td>
+<td align="left">teken slider op x,y, w,h, met huidige waarde pos van nrPos</td>
+</tr>
+</tbody>
+</table>
+<!-- -->
+</div>
+<div id="analyse---plan-van-aanpak" class="slide section level1">
+<h1>Analyse - Plan van aanpak</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Maak ruimte voor de sliders</li>
+</ol>
+<ol class="incremental" start="2" style="list-style-type: decimal">
+<li>Verwijder de text-box code</li>
+</ol>
+<ol class="incremental" start="3" style="list-style-type: decimal">
+<li>Voeg sliders toe</li>
+</ol>
+<ol class="incremental" start="4" style="list-style-type: decimal">
+<li>Laat sliders op muis reageren, drag buiten slider moet niet werken</li>
+</ol>
+<ol class="incremental" start="5" style="list-style-type: decimal">
+<li>Bereken gewicht en lengte uit slider</li>
+</ol>
+<ol class="incremental" start="6" style="list-style-type: decimal">
+<li>Gebruik slider waarden in BMI berekening</li>
+</ol>
+</div>
+<div id="analyse---tot-slot" class="slide section level1">
+<h1>Analyse - Tot Slot</h1>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Werk aan Testplan, Overzicht, Plan van Aanpak voor je gaat schrijven</li>
+<li>Bouw eerste punt Plan van Aanpak</li>
+<li>Refactor indien nodig</li>
+<li>Gebruik inzichten om Testplan, Overzicht, Plan van Aanpak aan te passen</li>
+<li>Ga verder naar (2) met het volgende punt</li>
+</ol>
+<!-- hier is een zichzelf etende format ... -->
+</div>
+<div id="analyse---in-de-praktijk" class="slide section level1">
+<h1>Analyse - In de praktijk</h1>
+<ul>
+<li>Gordijnencasus</li>
+</ul>
+</div>
+</body>
+</html>
