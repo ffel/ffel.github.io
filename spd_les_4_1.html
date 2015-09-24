@@ -318,5 +318,24 @@ windowW = <span class="fu">constrain</span>(windowW, <span class="dv">400</span>
 <li>Gordijnencasus</li>
 </ul>
 </div>
+<div id="test-je-code" class="slide section level1">
+<h1>Test je code</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// gordijn casus</span>
+
+<span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="fu">test</span>(<span class="fu">berekenLengteStof</span>(<span class="dv">100</span>), <span class="dv">310</span>); 
+  <span class="co">// je hebt twee stukken van 89 nodig</span>
+  <span class="fu">test</span>(<span class="fu">berekenMinimaleBreedte</span>(<span class="dv">120</span>), <span class="dv">89</span>);
+  <span class="fu">test</span>(<span class="fu">berekenAantalBanen</span>(<span class="dv">160</span>, <span class="dv">100</span>), <span class="dv">4</span>);
+  <span class="fu">test</span>(<span class="fu">berekenAantalBanen</span>(<span class="dv">200</span>, <span class="dv">100</span>), <span class="dv">4</span>);
+  <span class="fu">test</span>(<span class="fu">berekenAantalBanen</span>(<span class="dv">200</span>, <span class="dv">110</span>), <span class="dv">4</span>);
+  <span class="fu">test</span>(<span class="fu">berekenAantalBanen</span>(<span class="dv">200</span>, <span class="dv">300</span>), <span class="dv">2</span>);
+  <span class="fu">test</span>(<span class="fu">berekenAantalBanen</span>(<span class="dv">800</span>, <span class="dv">200</span>), <span class="dv">2</span>);
+}
+
+<span class="dt">void</span> <span class="fu">test</span>(<span class="dt">float</span> calculated, <span class="dt">float</span> expected) {
+  <span class="fu">println</span>(calculated, calculated == expected);
+} </code></pre></div>
+</div>
 </body>
 </html>
