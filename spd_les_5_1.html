@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>Week 5, Les 1 SPD</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Week 5, Les 1 SPD</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">Sep 2015</p>
+</div>
+<div id="vandaag" class="slide section level1">
+<h1>Vandaag</h1>
+<ul>
+<li>Module Opgaven - leesbaarheid</li>
+<li>Module Opgaven - loops</li>
+<li>Extra Opgaven</li>
+</ul>
+</div>
+<div id="lesplan-komende-weken" class="slide section level1">
+<h1>Lesplan Komende Weken</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Week</th>
+<th align="left">Les</th>
+<th align="left">Voorbereiding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">1</td>
+<td align="left">MOpg 6</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">Module 7, Opg 7</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">3</td>
+<td align="left">MOpg 7</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">1</td>
+<td align="left">Analyse Muntenspel</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">2</td>
+<td align="left">Analyse Schuifpuzzel</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">3</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="aanwezigheidsregistratie" class="slide section level1">
+<h1>Aanwezigheidsregistratie</h1>
+</div>
+<div id="leesbaarheid-1" class="slide section level1">
+<h1>Leesbaarheid (1)</h1>
+<ul>
+<li>Groot aantal mensen doet het in de <code>setup()</code></li>
+</ul>
+</div>
+<div id="leesbaarheid-2-uitgesplitst" class="slide section level1">
+<h1>Leesbaarheid (2, uitgesplitst)</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="kw">for</span> (<span class="dt">int</span> i=<span class="dv">1</span>; i&lt;=<span class="dv">8</span>; i++)
+    <span class="fu">tekenfamilie</span>(i);
+}
+
+<span class="dt">boolean</span> <span class="fu">isMeisje</span>(){
+  <span class="kw">return</span> <span class="co">/* is het een meisje */</span> ;
+}
+
+<span class="dt">void</span> <span class="fu">tekenfamilie</span>(<span class="dt">int</span> regel) {
+
+    <span class="co">// zolang meisje, teken meisje</span>
+
+    <span class="co">// teken jongen</span>
+}</code></pre></div>
+</div>
+<div id="is-het-een-meisje" class="slide section level1">
+<h1>Is het een meisje?</h1>
+<ul>
+<li><code>random(1) &lt; 0.5;</code></li>
+<li><code>random(1,4) &lt; 3;</code></li>
+<li><code>round(random(0,1)) &lt; 1</code></li>
+<li><code>ceil (random(2)) == 1</code></li>
+</ul>
+</div>
+<div id="met-do---while" class="slide section level1">
+<h1>Met do - while</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">tekenfamilie</span>(<span class="dt">int</span> regel) {
+
+    bool hetIsEenMeisje;
+
+    <span class="kw">do</span> {
+        hetIsEenMeisje = <span class="fu">isMeisje</span>();
+
+        <span class="kw">if</span> (hetIsEenMeisje)
+            <span class="co">// teken meisje</span>
+        <span class="kw">else</span>
+            <span class="co">// teken jongen</span>
+
+    } <span class="kw">while</span> (hetIsEenMeisje);
+}</code></pre></div>
+</div>
+<div id="met-do---while-1" class="slide section level1">
+<h1>Met do - while</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">tekenfamilie</span>(<span class="dt">int</span> regel) {
+
+    <span class="kw">while</span> (<span class="fu">meisje</span>()) {
+        <span class="co">// teken meisje</span>
+    }
+
+    <span class="co">// teken jongen</span>
+}</code></pre></div>
+</div>
+<div id="met-for" class="slide section level1">
+<h1>Met for</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">tekenfamilie</span>(<span class="dt">int</span> regel) {
+    
+    <span class="dt">int</span> i;
+
+    <span class="kw">for</span> ( ; <span class="fu">meisje</span>(); ) {
+        <span class="co">// teken meisje</span>
+    }
+
+    <span class="co">// teken jongen</span>
+}</code></pre></div>
+</div>
+<div id="uitwerkingen-1" class="slide section level1">
+<h1>Uitwerkingen (1)</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>(){
+   <span class="fu">tekenGezinnen</span>(<span class="dv">8</span>,<span class="dv">30</span>,<span class="dv">50</span>);
+}
+ 
+<span class="dt">void</span> <span class="fu">tekenGezinnen</span>(<span class="dt">int</span> aantalGezinnen,<span class="dt">int</span> imgBreedte, <span class="dt">int</span> imgHoogte){
+  <span class="dt">int</span> windowW;
+  <span class="dt">int</span> windowH;
+  PImage jongetje;
+  PImage meisje;
+  jongetje = <span class="fu">loadImage</span>(<span class="st">&quot;jongetje.png&quot;</span>);
+  meisje = <span class="fu">loadImage</span>(<span class="st">&quot;meisje.png&quot;</span>);
+  <span class="co">// 1 = jongen, 2 = meisje</span>
+  <span class="dt">int</span> randomGezin = <span class="fu">ceil</span>(<span class="fu">random</span>(<span class="dv">0</span>,<span class="dv">2</span>));
+  <span class="dt">int</span> xmarge = <span class="dv">0</span>;
+  <span class="dt">int</span> ymarge = <span class="dv">0</span>;
+  windowW = <span class="dv">300</span>;
+  windowH = aantalGezinnen * imgHoogte;
+  <span class="fu">size</span>(windowW,windowH);
+  <span class="dt">int</span> teller = <span class="dv">1</span>;
+  <span class="kw">while</span>(teller &lt;= aantalGezinnen){
+      <span class="kw">while</span>(randomGezin == <span class="dv">2</span>){
+        <span class="fu">image</span>(meisje,xmarge,ymarge);
+        xmarge = xmarge + imgBreedte;
+        randomGezin = <span class="fu">ceil</span>(<span class="fu">random</span>(<span class="dv">0</span>,<span class="dv">2</span>));
+      }
+      <span class="kw">while</span>(randomGezin ==<span class="dv">1</span> &amp;&amp; teller &lt;= aantalGezinnen){
+        <span class="fu">image</span>(jongetje,xmarge,ymarge);
+        xmarge = <span class="dv">0</span>;
+        ymarge = ymarge +imgHoogte;
+        teller ++;
+        randomGezin = <span class="fu">ceil</span>(<span class="fu">random</span>(<span class="dv">0</span>,<span class="dv">2</span>));
+      }
+  }
+}</code></pre></div>
+</div>
+<div id="een-andere-2" class="slide section level1">
+<h1>Een andere (2)</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span>(<span class="dt">int</span> y = <span class="dv">0</span>; y &lt; height; y = y + <span class="dv">50</span>){
+    <span class="kw">for</span>(<span class="dt">int</span> x = <span class="dv">0</span>; x &lt; width; x = x + <span class="dv">50</span>){
+        <span class="dt">float</span> rand = <span class="fu">random</span>(<span class="dv">1</span>,<span class="dv">4</span>);
+        <span class="fu">println</span>(rand);
+        <span class="kw">if</span>(rand &lt;= <span class="dv">3</span>){
+            <span class="fu">image</span>(M1,x,y);
+        }
+        <span class="kw">else</span>{
+            <span class="fu">image</span>(J1,x,y);
+            x = width;
+        }
+    }
+}</code></pre></div>
+</div>
+<div id="tot-slot-3" class="slide section level1">
+<h1>Tot slot (3)</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">PImage jongenSprite = <span class="fu">loadImage</span>(<span class="st">&quot;http://i.imgur.com/4LvCGmN.png&quot;</span>);
+PImage meisjeSprite = <span class="fu">loadImage</span>(<span class="st">&quot;http://i.imgur.com/0NfpQnb.png&quot;</span>);
+
+<span class="dt">int</span> gezinnen = <span class="dv">8</span>;
+<span class="dt">int</span> maxGezinsgrootte = <span class="dv">6</span>;
+<span class="dt">int</span> figuurBreedte = <span class="fu">max</span>(jongenSprite.<span class="fu">width</span>, meisjeSprite.<span class="fu">width</span>);
+<span class="dt">int</span> figuurHoogte = <span class="fu">max</span>(jongenSprite.<span class="fu">height</span>, meisjeSprite.<span class="fu">height</span>);
+
+<span class="dt">int</span> schermW = maxGezinsgrootte * figuurBreedte;
+<span class="dt">int</span> schermH = gezinnen * figuurHoogte;
+
+<span class="dt">int</span> JONGEN = <span class="dv">0</span>;
+<span class="dt">int</span> MEISJE = <span class="dv">1</span>;
+
+<span class="dt">void</span> <span class="fu">setup</span> () {
+  <span class="fu">size</span>(schermW, schermH);
+
+  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; gezinnen; i++)
+    <span class="fu">genereerGezin</span>( i * figuurHoogte );
+}
+
+<span class="dt">void</span> <span class="fu">genereerGezin</span> ( <span class="dt">int</span> y ) {
+  <span class="kw">for</span> (<span class="dt">int</span> p = <span class="dv">0</span>; p &lt; maxGezinsgrootte; p++){
+    <span class="dt">int</span> kind = <span class="fu">genereerKind</span>();
+    <span class="fu">tekenFiguur</span>(kind, p * figuurBreedte, y);
+    <span class="kw">if</span> (kind == JONGEN)
+      <span class="kw">break</span>;
+  }
+}
+
+<span class="dt">int</span> <span class="fu">genereerKind</span> () {
+  <span class="kw">if</span> ( <span class="fu">random</span>(<span class="dv">0</span>,<span class="dv">1</span>) &gt; <span class="fl">0.5</span> )
+    <span class="kw">return</span> JONGEN;
+  <span class="kw">else</span>
+    <span class="kw">return</span> MEISJE;
+}
+
+<span class="dt">void</span> <span class="fu">tekenFiguur</span> ( <span class="dt">int</span> figuur, <span class="dt">int</span> x, <span class="dt">int</span> y ) {
+  <span class="kw">if</span> (figuur == JONGEN)
+    <span class="fu">image</span> ( jongenSprite, x, y);
+  <span class="kw">else</span>
+    <span class="fu">image</span> ( meisjeSprite, x, y);
+}</code></pre></div>
+</div>
+<div id="opgave-2---100-gezinnen" class="slide section level1">
+<h1>Opgave 2 - 100 gezinnen</h1>
+<ul>
+<li><p>Evenveel jongens als meisjes?</p></li>
+<li><p>Functie die per gezin aantal jongens en meisjes geeft?</p></li>
+</ul>
+</div>
+<div id="uitwerkingen1" class="slide section level1">
+<h1>Uitwerkingen(1)</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">//poppetjes tellen</span>
+PImage jongetje;
+PImage meisje;
+<span class="dt">int</span> aantalMeisjes;
+<span class="dt">int</span> aantalJongetjes;
+<span class="dt">void</span> <span class="fu">setup</span>(){
+  meisje = <span class="fu">loadImage</span>(<span class="st">&quot;meisje.png&quot;</span>);
+  jongetje = <span class="fu">loadImage</span>(<span class="st">&quot;jongetje.png&quot;</span>);
+  <span class="fu">size</span>(<span class="dv">300</span>,<span class="dv">500</span>);
+  <span class="fu">teken</span>();
+  <span class="fu">image</span>(meisje,<span class="dv">30</span>,<span class="dv">30</span>);
+  <span class="fu">image</span>(jongetje,<span class="dv">90</span>,<span class="dv">30</span>);
+  <span class="fu">text</span>(aantalMeisjes,<span class="dv">30</span>,<span class="dv">100</span>);
+  <span class="fu">text</span>(aantalJongetjes, <span class="dv">90</span>,<span class="dv">100</span>);
+}
+ 
+<span class="dt">void</span> <span class="fu">teken</span>(){
+    <span class="dt">int</span> Xpos = <span class="dv">0</span>;
+    <span class="dt">int</span> Ypos = <span class="dv">0</span>;
+    <span class="kw">for</span>(<span class="dt">int</span> stop = <span class="dv">0</span>; stop&lt;<span class="dv">200</span>; stop++){
+        <span class="kw">while</span> (<span class="fu">random</span>(<span class="dv">0</span>,<span class="dv">1</span>) &lt;<span class="fl">0.5</span>){
+            <span class="fu">tekenMeisje</span>();
+            Xpos = Xpos<span class="dv">+30</span>;
+        }
+        <span class="fu">tekenJongen</span>();
+        Ypos = Ypos +<span class="dv">60</span>;
+        Xpos = <span class="dv">0</span>;
+    }
+}
+ 
+<span class="dt">void</span> <span class="fu">tekenMeisje</span>(){
+    aantalMeisjes++;
+}
+<span class="dt">void</span> <span class="fu">tekenJongen</span>(){
+    aantalJongetjes++;
+}</code></pre></div>
+</div>
+<div id="uitwerkingen-2" class="slide section level1">
+<h1>Uitwerkingen (2)</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>(){
+  <span class="fu">println</span>(<span class="st">&quot;Meisjes: &quot;</span> + <span class="fu">gezinnen</span>(<span class="dv">100</span>));
+  <span class="fu">println</span>(<span class="st">&quot;Jongens: 100&quot;</span>);
+}
+
+<span class="dt">int</span> <span class="fu">gezinnen</span>(<span class="dt">int</span> gezinnen){
+  <span class="dt">int</span> meisjes = <span class="dv">0</span>;
+  <span class="kw">for</span>(<span class="dt">int</span> gezin = <span class="dv">0</span>; gezin&lt;gezinnen; gezin++){
+    meisjes += <span class="fu">gezin</span>(gezin);
+  }
+  <span class="kw">return</span> meisjes;
+}
+
+<span class="dt">int</span> <span class="fu">gezin</span>(<span class="dt">int</span> x){
+  <span class="dt">int</span> aantal;
+  <span class="kw">for</span> (aantal = <span class="dv">0</span>; <span class="fu">round</span>(<span class="fu">random</span>(<span class="dv">0</span>,<span class="dv">1</span>))&lt;<span class="dv">1</span>; aantal++){
+  }
+  <span class="kw">return</span> aantal;
+}</code></pre></div>
+</div>
+<div id="extra-opdracht---priem" class="slide section level1">
+<h1>Extra Opdracht - Priem</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="kw">for</span> (<span class="dt">int</span> huidigGetal=<span class="dv">2</span>;huidigGetal&lt;<span class="dv">1000</span>;huidigGetal++) {
+    <span class="dt">boolean</span> priemgetal=<span class="kw">true</span>;
+    <span class="kw">for</span> (<span class="dt">int</span> doorloper=<span class="dv">2</span>;doorloper&lt;huidigGetal;doorloper++) {
+      <span class="kw">if</span> (huidigGetal%doorloper==<span class="dv">0</span>) {
+        priemgetal=<span class="kw">false</span>;
+      }
+    }
+    <span class="kw">if</span> (priemgetal) {
+      <span class="co">// waarom in een keer System.out</span>
+      System.<span class="fu">out</span>.<span class="fu">println</span>(huidigGetal+<span class="st">&quot; is een priemgetal!&quot;</span>);
+    }
+  }
+}</code></pre></div>
+</div>
+<div id="extra-opdracht---gokspelletje" class="slide section level1">
+<h1>Extra Opdracht - Gokspelletje</h1>
+<ol style="list-style-type: decimal">
+<li>Schrijf zonder globale waarde,</li>
+<li><code>... speelSpelletje(... saldo, ... inzet, ...maximumbedrag);</code></li>
+<li>gebruik <code>speelSpelletje(...)</code> in de code</li>
+</ol>
+</div>
+</body>
+</html>
