@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>ESD</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">ESD</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">november 2015</p>
+</div>
+<div id="vandaag" class="slide section level1">
+<h1>Vandaag</h1>
+<p>Vanwege Communicatie</p>
+<ul>
+<li>Getalstelsels</li>
+<li>Conversie tussen getalstelsels</li>
+</ul>
+<p>Maar ook:</p>
+<ul>
+<li>Basis voor efficient binaire waarden opslaan</li>
+</ul>
+<p>En</p>
+<ul>
+<li>Klein stukje checksum?</li>
+</ul>
+</div>
+<div id="vragen-nav-voorbereiding" class="slide section level1">
+<h1>Vragen nav voorbereiding?</h1>
+</div>
+<div id="aanwezigheidsregistratie" class="slide section level1">
+<h1>Aanwezigheidsregistratie</h1>
+</div>
+<div id="introductie" class="slide section level1">
+<h1>Introductie</h1>
+<p><code>00110111</code></p>
+</div>
+<div id="je-telefoon" class="slide section level1">
+<h1>Je telefoon</h1>
+<ul class="incremental">
+<li>intern <code>0</code> en <code>1</code></li>
+<li>conversie volgens tabel (over nagedacht)</li>
+<li>zijn er andere tabellen mogelijk</li>
+</ul>
+</div>
+<div id="conversie-naar-10-tallig" class="slide section level1">
+<h1>Conversie naar 10-tallig</h1>
+<ul class="incremental">
+<li><span class="math inline">\(423_{10}\)</span></li>
+<li><span class="math inline">\(423_{16}\)</span></li>
+<li><span class="math inline">\(423_8\)</span></li>
+<li><span class="math inline">\(423_2\)</span></li>
+</ul>
+</div>
+<div id="conversie-van-10-tallig" class="slide section level1">
+<h1>Conversie <em>van</em> 10-tallig</h1>
+<ul class="incremental">
+<li>converteer <span class="math inline">\(167_{10}\)</span> naar binair</li>
+</ul>
+</div>
+<div id="waarom-16--en-8-tallig" class="slide section level1">
+<h1>Waarom 16- en 8-tallig?</h1>
+<p><code>10100111</code></p>
+<ul>
+<li>Waarin verschillen 8, 16 aan de ene kant en 10?</li>
+</ul>
+</div>
+<div id="coderingsopdracht" class="slide section level1">
+<h1>Coderingsopdracht</h1>
+<ul>
+<li>laptops dicht, alleen pen en papier</li>
+</ul>
+</div>
+<div id="pauze" class="slide section level1">
+<h1>Pauze</h1>
+</div>
+<div id="algorithme" class="slide section level1">
+<h1>Algorithme</h1>
+<ul>
+<li>Efficiënt, maar niet altijd helder hoe</li>
+<li>Eerst op bord twee algorithmes
+<ul>
+<li>van decimaal naar 2, 8, 16, n</li>
+<li>van n tallig naar decimaal</li>
+</ul></li>
+</ul>
+</div>
+<div id="decimaal-naar-n" class="slide section level1">
+<h1>Decimaal naar N</h1>
+<ul>
+<li>Schrijf <span class="math inline">\(150_{10}\)</span> efficient om naar binair</li>
+</ul>
+</div>
+<div id="n-naar-decimaal" class="slide section level1">
+<h1>N naar Decimaal</h1>
+<ul>
+<li>Schrijf <span class="math inline">\(10010110_2\)</span> om naar decimaal</li>
+</ul>
+</div>
+<div id="codeopdracht" class="slide section level1">
+<h1>Codeopdracht</h1>
+<ul>
+<li>Zelf schrijven
+<ul>
+<li>in paren (laptop met de VGA aansluiting),</li>
+<li>één van beide algorithmes,</li>
+<li>In Arduino of <em>Processing</em>
+<ul>
+<li>In Processing: <code>println('a', byte('a'), char(97));</code></li>
+</ul></li>
+</ul></li>
+<li>Demonstreren</li>
+</ul>
+</div>
+<div id="conversies-op-de-arduino" class="slide section level1">
+<h1>Conversies op de Arduino</h1>
+<p>Zie <a href="https://www.arduino.cc/en/Tutorial/ASCIITable" class="uri">https://www.arduino.cc/en/Tutorial/ASCIITable</a></p>
+</div>
+<div id="nu-terug-naar-de-dagtoets" class="slide section level1">
+<h1>Nu terug naar de dagtoets</h1>
+</div>
+</body>
+</html>

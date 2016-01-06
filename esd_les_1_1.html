@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>ESD</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">ESD</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">november 2015</p>
+</div>
+<div id="welkom" class="slide section level1">
+<h1>Welkom!</h1>
+<ul>
+<li>Docenten
+<ul>
+<li>Sander van Leer</li>
+<li>Chris van Uffelen</li>
+</ul></li>
+<li>Vandaag
+<ul>
+<li>Uitleg Werkwijze</li>
+<li>Knipperende LED's</li>
+</ul></li>
+</ul>
+</div>
+<div id="aanwezigheidsregistratie" class="slide section level1">
+<h1>Aanwezigheidsregistratie</h1>
+</div>
+<div id="overzicht-van-de-cursus" class="slide section level1">
+<h1>Overzicht van de Cursus</h1>
+<ul>
+<li>werkcolleges met voorbereidingen</li>
+<li>toets in week 5</li>
+<li>toets in week 8</li>
+<li>eindopdracht</li>
+</ul>
+</div>
+<div id="overzicht-van-de-week" class="slide section level1">
+<h1>Overzicht van de Week</h1>
+<ul class="incremental">
+<li>Iedere les wordt voorbereid</li>
+<li>Eerste les: Uitleg Weekopdracht</li>
+<li>Iedere les: Dagopdrachten en Weekopdracht</li>
+<li>Laatste les: Inleveren Weekopdracht
+<ul class="incremental">
+<li>Demonstratie</li>
+<li>Mail code naar <code>han.esd.i1e@gmail.com</code></li>
+</ul></li>
+<li>Oefentoets (vanaf vrijdag)</li>
+</ul>
+</div>
+<div id="schoology" class="slide section level1">
+<h1>Schoology</h1>
+<p>Zie <a href="https://app.schoology.com/login">Schoology</a></p>
+</div>
+<div id="mail-code" class="slide section level1">
+<h1>Mail Code</h1>
+<ul>
+<li>naar <code>han.esd.i1e@gmail.com</code></li>
+<li>herleidbare afzender</li>
+<li><p>code in mail:</p>
+<pre class="txt"><code>// opdracht 1.1
+
+void setup() {
+
+}
+
+// opdracht 1.2</code></pre></li>
+</ul>
+</div>
+<div id="overzicht-van-een-les" class="slide section level1">
+<h1>Overzicht van een Les</h1>
+<ul class="incremental">
+<li>Voorbereiding
+<ul class="incremental">
+<li>Theorie bestuderen</li>
+<li>Basistoets maken*</li>
+<li>Voorbereidende opdrachten</li>
+<li>Vragen meenemen naar de les*</li>
+</ul></li>
+<li>Werkcolleges
+<ul class="incremental">
+<li>Terugkoppelen huiswerk</li>
+<li>Dagopdrachten en een Weekopdracht</li>
+<li>Afronden van de les</li>
+</ul></li>
+<li>Einde van de week
+<ul class="incremental">
+<li>Demonstreer en mail Weekopdracht*</li>
+<li>Proeftoets maken*</li>
+</ul></li>
+</ul>
+<p>De gemarkeerde punten * worden gebruikt bij de voorbereiding</p>
+</div>
+<div id="vragen-over-werkwijze-en-organisatie" class="slide section level1">
+<h1>Vragen over Werkwijze en Organisatie?</h1>
+</div>
+<div id="aan-het-werk" class="slide section level1">
+<h1>Aan het werk!</h1>
+<ul>
+<li>nou ja, nog even een paar dingen uitleggen</li>
+</ul>
+</div>
+<div id="arduino" class="slide section level1">
+<h1>Arduino</h1>
+<div class="figure">
+<img src="img/arduino.png" alt="" />
+
+</div>
+<ul>
+<li>micro<em>controller</em></li>
+<li>micro<em>processor</em></li>
+</ul>
+</div>
+<div id="breadboard" class="slide section level1">
+<h1>Breadboard</h1>
+<div class="figure">
+<img src="img/geelgroen.png" alt="" />
+
+</div>
+<p>Zijn geel (C) en groen (E) zijn met elkaar verbonden.</p>
+<ol style="list-style-type: decimal">
+<li>ja</li>
+<li>nee</li>
+</ol>
+</div>
+<div id="led-en-weerstand" class="slide section level1">
+<h1>LED en Weerstand</h1>
+<!--
+https://www.arduino.cc/en/uploads/Tutorial/ExampleCircuit_bb.png
+-->
+<div class="figure">
+<img src="img/ledcircuit400.png" alt="" />
+
+</div>
+<ol style="list-style-type: decimal">
+<li>Correct geïnstalleerd</li>
+<li>Geen idee</li>
+<li>Weerstand verkeerd</li>
+<li>LED verkeerd</li>
+</ol>
+</div>
+<div id="dus" class="slide section level1">
+<h1>Dus</h1>
+<ul>
+<li>De negatieve kant van de LED is gemarkeerd met een <strong>dikke min</strong></li>
+</ul>
+<p>Verder:</p>
+<ul class="incremental">
+<li>De positieve kant van de LED heeft een langer pootje</li>
+<li>De plus kant van de LED sluit je aan op de plus pool van de spanningsbron</li>
+</ul>
+<!--
+Trek je niets aan van de vorm van het aambeeld, ik heb beide varianten
+al gezien (aambeeld aan anode en aan kathode)
+
+meer info over de berekening van de weerstanden:
+
+-   [weerstanden](http://www.linetec.nl/electronics/leds/led_2.html)
+
+Het ANp KAn (wel zeggen dat ze het weet...)
+
+-   ANode Positief
+-   KAthode Negatief
+-->
+</div>
+<div id="weekopdracht" class="slide section level1">
+<h1>Weekopdracht</h1>
+<p>Filmpje ...</p>
+<p>Waarvoor wordt de USB kabel gebruikt?</p>
+<ol class="incremental" style="list-style-type: decimal">
+<li>Stroomvoorziening Arduino</li>
+<li>Doorgeven wanneer de LED's aan en uit moeten</li>
+<li>Doorgeven van starten patronen aan de Arduino</li>
+</ol>
+<!--
+
+Weekopdracht - Timing Diagrammen
+================================
+
+![](img/timingdiagr.png)
+
+-->
+</div>
+<div id="opdrachten" class="slide section level1">
+<h1>Opdrachten</h1>
+<!-- iets met nette code -->
+</div>
+<div id="volgende-keer" class="slide section level1">
+<h1>Volgende Keer</h1>
+<p><a href="https://www.youtube.com/watch?v=wI7jtqf2i-I">filmpje....</a></p>
+<ul class="incremental">
+<li>Communicatie in de Weekopdracht</li>
+</ul>
+<!-- wagon wheel effect -->
+</div>
+</body>
+</html>
