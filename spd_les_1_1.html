@@ -9,6 +9,43 @@
   <meta name="author" content="Chris van Uffelen" />
   <title>Structured Program Development</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
@@ -22,12 +59,23 @@ Chris van Uffelen
   </p>
   <p class="date">31 augustus 2015</p>
 </div>
+<div id="welkom" class="slide section level1">
+<h1>Welkom!</h1>
+<ul>
+<li>Chris van Uffelen</li>
+</ul>
+</div>
 <div id="wat" class="slide section level1">
 <h1>Wat?</h1>
 <ul>
-<li><strong>Skills</strong></li>
-<li><strong>Community</strong></li>
-<li>Art</li>
+<li>Programmeertaal</li>
+<li>Ontwerp</li>
+<li>Groepswerk
+<ul>
+<li>Conventies</li>
+<li>Review / Code lezen</li>
+<li>Uitleggen van je werk</li>
+</ul></li>
 </ul>
 </div>
 <div id="hoe" class="slide section level1">
@@ -37,24 +85,36 @@ Chris van Uffelen
 <li>Bespreken / Toelichting / Context</li>
 </ul>
 </div>
-<div id="voor-we-aan-het-werk-kunnen" class="slide section level1">
-<h1>Voor we aan het werk kunnen</h1>
+<div id="voor-we-echt-aan-het-werk-kunnen" class="slide section level1">
+<h1>Voor we echt aan het werk kunnen</h1>
 <ul>
-<li>Installeer <a href="https://processing.org">Processing</a></li>
+<li><p>Installeer <a href="https://processing.org">Processing</a></p>
+<p><a href="https://processing.org/download/" class="uri">https://processing.org/download/</a></p>
+<p>Versie 2.2.1!!</p></li>
 </ul>
 </div>
-<div id="aan-het-werk" class="slide section level1">
-<h1>Aan het werk</h1>
+<div id="aan-het-werk-bijna" class="slide section level1">
+<h1>Aan het werk (Bijna)</h1>
 <ul>
-<li><a href="http://www.youtube.com/playlist?list=PL6A082BB0C2B613C4&amp;feature=mh_lolz">Eerste Screencast</a></li>
+<li><p><a href="https://online.han.nl/sites/5-ICA-PropI-CANSS/default.aspx">Studiehandleiding</a></p>
+<p>Informatie over vak.</p></li>
+<li><p><a href="https://online.han.nl/sites/5-ICA-PropI-CANSS/default.aspx">Reader p 10</a></p>
+<p>Rode draad.</p></li>
+<li><p><a href="http://www.youtube.com/playlist?list=PL6A082BB0C2B613C4&amp;feature=mh_lolz">Eerste Screencast</a></p>
+<p><a href="https://www.youtube.com/playlist?list=PL6A082BB0C2B613C4" class="uri">https://www.youtube.com/playlist?list=PL6A082BB0C2B613C4</a></p></li>
+<li><p>Opgave 1.1</p></li>
 </ul>
 </div>
-<div id="opmerkingen" class="slide section level1">
-<h1>Opmerkingen</h1>
-<ul>
-<li><code>println</code> en <code>text</code> hebben cruciaal verschil</li>
-<li>toch iets over de argumenten (&quot;string&quot;, <code>10</code> en zelfs <code>10 + 10</code>)</li>
-</ul>
+<div id="opgave-1.1" class="slide section level1">
+<h1>Opgave 1.1</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="fu">println</span>(<span class="st">&quot;125 – 23 = &quot;</span> + (<span class="dv">125-23</span>)); <span class="co">// Let OP Haakjes om 125-23!</span>
+<span class="fu">println</span>(<span class="st">&quot;75 * 3 = &quot;</span> + <span class="dv">75</span> * <span class="dv">3</span>);     <span class="co">// Niets bijzonders</span>
+<span class="fu">println</span>(<span class="st">&quot;45 % 7 = &quot;</span> + <span class="dv">45</span> % <span class="dv">7</span>);     <span class="co">// 45/7 = 6 rest 3</span>
+<span class="fu">println</span>(<span class="st">&quot;45 / 7 = &quot;</span> + <span class="dv">45</span>/<span class="dv">7</span>);       <span class="co">// Allemaal ints dus wordt afgekapt</span>
+<span class="fu">println</span>(<span class="st">&quot;45.0 / 7 = &quot;</span> + <span class="fl">45.0</span> /<span class="dv">7</span>);  <span class="co">// Met 6 decimalen. </span></code></pre></div>
+</div>
+<div id="volgende-opgaven" class="slide section level1">
+<h1>Volgende Opgaven</h1>
 </div>
 </body>
 </html>
