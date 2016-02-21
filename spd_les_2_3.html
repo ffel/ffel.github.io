@@ -6,8 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Chris van Uffelen" />
-  <title>Week 2, Les 3 SPD</title>
+  <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -52,99 +51,163 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div class="slide titlepage">
-  <h1 class="title">Week 2, Les 3 SPD</h1>
-  <p class="author">
-Chris van Uffelen
-  </p>
-  <p class="date">Sep 2015</p>
-</div>
-<div id="vandaag" class="slide section level1">
-<h1>Vandaag</h1>
-<ul>
-<li>Moduleopgave 3.6, 3.7, 3.8</li>
-<li>Moduleopgave Module 3</li>
-<li>Derde vraag uit de proeftoets.</li>
-</ul>
-</div>
-<div id="lestijden" class="slide section level1">
-<h1>Lestijden</h1>
-</div>
-<div id="extra-ondersteuning" class="slide section level1">
-<h1>Extra Ondersteuning</h1>
-<p>In Scholar verschijnt informatie over extra begeleiding door student assistenten.</p>
-</div>
-<div id="huiswerkopgaven" class="slide section level1">
-<h1>Huiswerkopgaven</h1>
-<ul>
-<li>Naar <code>i1f.spd@gmail.com</code></li>
-<li>Ik kijk niet meer in zip bestanden!</li>
-</ul>
+<div id="lesplan-komende-weken" class="slide section level1">
+<h1>Lesplan Komende Weken</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Week</th>
+<th align="left">Les</th>
+<th align="left">Voorbereiding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">Module 4, Opg 4</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">WOE</td>
+<td align="left"><strong>TOETS MOD 1 &amp; 2</strong></td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">2</td>
+<td align="left">MOpg 4</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left">Module 5, Opg 5</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="aanwezigheidsregistratie" class="slide section level1">
 <h1>Aanwezigheidsregistratie</h1>
+<ul>
+<li>iSAS</li>
+</ul>
 </div>
-<div id="opgaven-3.6---3.8-spel" class="slide section level1">
-<h1>Opgaven 3.6 - 3.8 (spel)</h1>
+<div id="vragen-proeftoets" class="slide section level1">
+<h1>Vragen Proeftoets</h1>
+<ul>
+<li>Doe de oefenopgave op <strong>papier</strong>.</li>
+<li>Doe je best <strong>werkende</strong> code te schrijven.</li>
+<li>Doe je best <strong>leesbare</strong> code te schrijven.</li>
+<li>API referentie</li>
+</ul>
 </div>
-<div id="moduleopgave-robot" class="slide section level1">
-<h1>Moduleopgave (robot)</h1>
-<ol style="list-style-type: decimal">
-<li>Speelveld
+<div id="vraag-1" class="slide section level1">
+<h1>Vraag 1</h1>
 <ul>
-<li><code>size()</code></li>
-</ul></li>
-<li>Robot
-<ul>
-<li>rectangle, x, y, breedte, <del>hoogte</del>, kleur</li>
-</ul></li>
-<li>Vracht
-<ul>
-<li>ellipse, x, y, breedte (is breedte robot), <del>hoogte</del></li>
-</ul></li>
-<li>Robot bewegen
-<ul>
-<li>pijltjestoetsen</li>
-<li>niet buiten speelveld</li>
-<li>verplaatsing gelijk aan stapgrootte robot</li>
-</ul></li>
-<li>Vracht vastpakken
-<ul>
-<li>enter toets</li>
-<li>als robot op vracht staat</li>
-<li>(alleen als robot vracht nog niet vast heeft)</li>
-</ul></li>
-<li>Vracht meenemen
-<ul>
-<li>met bewegen robot</li>
-<li>alleen als robot vracht heeft vastgepakt</li>
-<li>positie vracht is positie robot, verschil ellipse en rect!!</li>
-</ul></li>
-<li>Vracht loslaten
-<ul>
-<li>enter toets</li>
-<li>alleen als robot vracht vast heeft</li>
-</ul></li>
-</ol>
+<li>Denk aan gebruik van variabelen.</li>
+</ul>
 </div>
-<div id="toetsopgave-balk" class="slide section level1">
-<h1>Toetsopgave balk</h1>
+<div id="antwoord-1" class="slide section level1">
+<h1>Antwoord 1</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="fu">size</span>(<span class="dv">600</span>,<span class="dv">400</span>);
+<span class="dt">float</span> bedragExclBtw = <span class="dv">250</span>;
+<span class="dt">float</span> btwPercentage = <span class="dv">19</span>;
+
+<span class="dt">float</span> btw = bedragExclBtw * btwPercentage / <span class="fl">100.0</span>;
+
+<span class="fu">text</span>(<span class="st">&quot;exclusief btw: &quot;</span> + bedragExclBtw,<span class="dv">10</span>,<span class="dv">10</span>);
+<span class="fu">text</span>(<span class="st">&quot;btw: &quot;</span> + btw,<span class="dv">10</span>,<span class="dv">30</span>);
+<span class="fu">text</span>(<span class="st">&quot;inclusief btw: &quot;</span> + (bedragExclBtw + btw),<span class="dv">10</span>,<span class="dv">50</span>);</code></pre></div>
 </div>
-<div id="toetsopgave-2" class="slide section level1">
-<h1>Toetsopgave (2)</h1>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> balkHoogte = <span class="dv">0</span>;
+<div id="vraag-2" class="slide section level1">
+<h1>Vraag 2</h1>
+</div>
+<div id="antwoord-op-vraag-2" class="slide section level1">
+<h1>Antwoord op vraag 2</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> GEEL = #FFDA05;
+<span class="dt">int</span> BLAUW = #256CE3;
+
 <span class="dt">int</span> wBreedte = <span class="dv">400</span>;
-<span class="dt">int</span> marge = <span class="dv">50</span>;
+<span class="dt">int</span> wHoogte = wBreedte;
+<span class="fu">size</span>(wBreedte, wHoogte);
+<span class="fu">background</span>(BLAUW);
+
+<span class="fu">fill</span>(GEEL);
+<span class="fu">noStroke</span>();
+<span class="co">// op het laatst delen door vier!</span>
+<span class="dt">int</span> zonBreedte = wHoogte * <span class="dv">3</span> / <span class="dv">4</span>;
+<span class="fu">ellipse</span>(wBreedte / <span class="dv">2</span>, wHoogte / <span class="dv">2</span>, zonBreedte, zonBreedte);
+
+<span class="fu">stroke</span>(GEEL);
+<span class="fu">line</span>(<span class="dv">0</span>, <span class="dv">0</span>, wBreedte - <span class="dv">1</span>, wHoogte - <span class="dv">1</span>);
+<span class="fu">line</span>(<span class="dv">0</span>, wHoogte - <span class="dv">1</span>, wBreedte -<span class="dv">1</span>, <span class="dv">0</span>);
+<span class="fu">line</span>(<span class="dv">0</span>, wHoogte / <span class="dv">2</span>, wBreedte -<span class="dv">1</span>, wHoogte / <span class="dv">2</span>);
+<span class="fu">line</span>(wBreedte / <span class="dv">2</span>, <span class="dv">0</span>, wBreedte / <span class="dv">2</span>, wHoogte -<span class="dv">1</span>);</code></pre></div>
+</div>
+<div id="vraag-3" class="slide section level1">
+<h1>Vraag 3</h1>
+</div>
+<div id="antwoord-op-vraag-3" class="slide section level1">
+<h1>Antwoord op vraag 3</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> hoogte = <span class="dv">0</span>;
 
 <span class="dt">void</span> <span class="fu">setup</span>() {
-  <span class="fu">background</span>(<span class="dv">0</span>);
-  <span class="fu">size</span>(wBreedte,wBreedte); 
+  <span class="fu">size</span>(<span class="dv">400</span>, <span class="dv">350</span>);
+  <span class="fu">fill</span> (#ff00ff);
 }
 
 <span class="dt">void</span> <span class="fu">draw</span>() {
-  <span class="fu">fill</span>(#E109E5);
-  <span class="fu">rect</span>(marge, wBreedte - balkHoogte, wBreedte - marge*<span class="dv">2</span>, balkHoogte); <span class="co">// beginpositie wordt aangepast</span>
-  balkHoogte++;
+  <span class="fu">rect</span>(width/<span class="dv">4</span>, height, width/<span class="dv">2</span>, -hoogte);
+  hoogte++;
+}</code></pre></div>
+<!--
+Module op basis van de taken die er zijn
+-->
+</div>
+<div id="moduleopgave" class="slide section level1">
+<h1>Moduleopgave</h1>
+<ul>
+<li><p>Wat in <code>setup</code>, wat in <code>draw</code>, wat in <code>mouseClicked</code></p></li>
+<li><p>Waar bepaal je de nieuwe waarde voor <code>vrachtX</code> en <code>vrachtY</code></p></li>
+<li><p>Omkeren van een <code>boolean waarde</code></p></li>
+<li><p>Robot en vracht op elkaar leggen</p></li>
+<li><p>Switch in <code>keyPressed()</code></p></li>
+</ul>
+</div>
+<div id="switch" class="slide section level1">
+<h1>Switch</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (x == <span class="dv">0</span>) {              <span class="kw">switch</span>(x) {
+    <span class="fu">println</span>(<span class="st">&quot;nul&quot;</span>)            <span class="kw">case</span> <span class="dv">0</span>:
+}                               <span class="fu">println</span>(<span class="st">&quot;nul&quot;</span>);
+<span class="kw">else</span> <span class="kw">if</span> (x == <span class="dv">1</span>) {              <span class="kw">break</span>;
+    <span class="fu">println</span>(<span class="st">&quot;één&quot;</span>)            <span class="kw">case</span> <span class="dv">1</span>:
+}                               <span class="fu">println</span>(<span class="st">&quot;één&quot;</span>);
+<span class="kw">else</span> {                          <span class="kw">break</span>;
+    <span class="fu">println</span>(<span class="st">&quot;anders&quot;</span>)         <span class="kw">default</span>:
+}                               <span class="fu">println</span>(<span class="st">&quot;anders&quot;</span>);
+                           }</code></pre></div>
+</div>
+<div id="switch---2" class="slide section level1">
+<h1>Switch - 2</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">void</span> <span class="fu">keyReleased</span>() {
+  <span class="kw">switch</span>(keyCode) {
+    <span class="kw">case</span> LEFT:
+      posRobotX -= <span class="dv">20</span>;
+      <span class="kw">break</span>;
+    <span class="kw">case</span> RIGHT:
+      posRobotX += <span class="dv">20</span>;
+      <span class="kw">break</span>;
+    <span class="kw">case</span> DOWN:
+      posRobotY += <span class="dv">20</span>;
+      <span class="kw">break</span>;
+    <span class="kw">case</span> UP:
+      posRobotY -= <span class="dv">20</span>;
+      <span class="kw">break</span>;
+    <span class="kw">case</span> ENTER:
+      <span class="kw">if</span>(posRobotX == posVrachtX &amp;&amp; posRobotY == posVrachtY) {
+        isCarried = !isCarried;
+      }
+      <span class="kw">break</span>;
+  }
 }</code></pre></div>
 </div>
 </body>

@@ -62,11 +62,14 @@ Chris van Uffelen
 <div id="vandaag" class="slide section level1">
 <h1>Vandaag</h1>
 <ul>
-<li>Start om 9.15</li>
-<li>Analyse Oefeningen</li>
-<li>Code Dingetjes</li>
-<li>Oefenopgaven module 2</li>
+<li>Gebruik maken van functies</li>
 </ul>
+<!--
+-   Start om 9.15
+-   Analyse Oefeningen
+-   Code Dingetjes
+-   Oefenopgaven module 2
+-->
 </div>
 <div id="aanwezigheidsregistratie" class="slide section level1">
 <h1>Aanwezigheidsregistratie</h1>
@@ -74,110 +77,91 @@ Chris van Uffelen
 <li>iSAS</li>
 </ul>
 </div>
-<div id="moduleopgave-1---analyse" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse</h1>
-<p>Teken een <em>rectangle</em> zo:</p>
-<div class="figure">
-<img src="rect1.png" />
-
-</div>
-<p>Hoogte Window <code>H</code> en hoogte <code>h</code> blokje zijn bekend.</p>
-<p>Ik wil y positie blokje <code>y</code> berekenen.</p>
-</div>
-<div id="moduleopgave-1---analyse-2" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (2)</h1>
-<p>Door <code>y</code> groter te kiezen zakt het blokje</p>
-<div class="figure">
-<img src="rect2.png" />
-
-</div>
-<p>Kies <code>y</code> precies zo dat blokje goed uitlijnd.</p>
-</div>
-<div id="moduleopgave-1---analyse-3" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (3)</h1>
-<p>We weten twee dingen van y(paarse stip)</p>
-<div class="figure">
-<img src="rect3.png" />
-
-</div>
+<div id="moduleopgave" class="slide section level1">
+<h1>Moduleopgave</h1>
 <ul>
-<li>gelijk aan <code>H</code></li>
-<li>gelijk aan <code>h + y</code></li>
-</ul>
-<p>maar dan ook</p>
-<ul>
-<li><code>H = h + y</code></li>
+<li>13 inzendingen</li>
+<li>2.5 met zipbestand, ik lees die <em>niet</em>!</li>
+<li>ik wil alleen de moduleopgaven</li>
 </ul>
 </div>
-<div id="moduleopgave-1---analyse-4" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (4)</h1>
+<div id="moduleopgave-1" class="slide section level1">
+<h1>Moduleopgave (1)</h1>
 <ul>
-<li><code>H = h + y</code></li>
+<li>veel mensen <em>schalen</em> hun balk niet.</li>
+<li>aantal mensen doen iets raars met positie (icm schalen)</li>
 </ul>
-<p>maar dan ook</p>
-<ul>
-<li><code>y = H - h</code></li>
-</ul>
-</div>
-<div id="moduleopgave-1---analyse-5" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (5)</h1>
-<p>Maar eigenlijk kan je het zelf zo aflezen</p>
-<div class="figure">
-<img src="rect4.png" />
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">float</span> a, a_h, a_y;
+<span class="dt">float</span> max;
 
-</div>
-<p><code>y = H - h</code></p>
-</div>
-<div id="moduleopgave-1---analyse-6" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (6)</h1>
-<p>Toch?</p>
-<div class="figure">
-<img src="rect5.png" />
+a   = <span class="dv">12000000</span>;
+max = <span class="dv">15000000</span>;
 
-</div>
-<p><code>x = ....</code></p>
-</div>
-<div id="moduleopgave-1---analyse-7" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (7)</h1>
-<p>Toch?</p>
-<div class="figure">
-<img src="rect6.png" />
+a_h = a / max * screen_h;
 
+a_y = screen_h - a_h;</code></pre></div>
 </div>
-<p><code>x = ....</code></p>
+<div id="moduleopgave-2" class="slide section level1">
+<h1>Moduleopgave (2)</h1>
+<p>Interessante alternatieven:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">float</span> a = <span class="dv">123</span>;
+<span class="dt">float</span> b = <span class="dv">988</span>;
+<span class="dt">float</span> c = <span class="dv">443</span>;
+<span class="dt">float</span> max = <span class="dv">1200</span>;
+
+<span class="dt">int</span> scherm_w = <span class="dv">800</span>;
+<span class="dt">int</span> scherm_h = <span class="dv">600</span>;
+
+<span class="dt">float</span> bar_a_h = a * scherm_h / max;
+<span class="dt">float</span> bar_b_h = b * scherm_h / max;
+<span class="dt">float</span> bar_c_h = c * scherm_h / max;
+
+<span class="dt">int</span> bar_w = <span class="dv">150</span>;
+<span class="dt">int</span> bars = <span class="dv">3</span>;
+
+<span class="fu">size</span>(scherm_w, scherm_h);
+
+<span class="fu">fill</span>(<span class="dv">255</span>,<span class="dv">0</span>,<span class="dv">0</span>);
+<span class="fu">rect</span>((<span class="dv">1</span>*scherm_w)/(bars<span class="dv">+1</span>) - bar_w/<span class="dv">2</span>, scherm_h, bar_w, -bar_a_h);
+<span class="co">//   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^         ^^^^^^^^</span>
+
+<span class="fu">fill</span>(<span class="dv">0</span>,<span class="dv">255</span>,<span class="dv">0</span>);
+<span class="fu">rect</span>((<span class="dv">2</span>*scherm_w)/(bars<span class="dv">+1</span>) - bar_w/<span class="dv">2</span>, scherm_h, bar_w, -bar_b_h);
+
+<span class="fu">fill</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">255</span>);
+<span class="fu">rect</span>((<span class="dv">3</span>*scherm_w)/(bars<span class="dv">+1</span>) - bar_w/<span class="dv">2</span>, scherm_h, bar_w, -bar_c_h);</code></pre></div>
 </div>
-<div id="moduleopgave-1---analyse-8" class="slide section level1">
-<h1>Moduleopgave 1 - Analyse (8)</h1>
-<p>Toch?</p>
-<ul>
-<li><code>y = H - h</code></li>
-<li><code>x = W - w</code></li>
-<li><code>x = W/2 - w/2</code></li>
-</ul>
+<div id="opgave" class="slide section level1">
+<h1>Opgave</h1>
+<p>Gegeven</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> screen_w = <span class="dv">800</span>;
+<span class="dt">int</span> screen_h = <span class="dv">600</span>;
+
+<span class="dt">int</span> marge = <span class="dv">20</span>;
+
+<span class="dt">int</span> rechts_x, onder_y, midden_x, midden_y;</code></pre></div>
+<p>Vul de code aan:</p>
+<ol style="list-style-type: decimal">
+<li><p><code>rechts_x = ....;</code> zodat deze <code>marge</code> links van de rechterkant zit.</p></li>
+<li><p><code>onder_y = ....;</code> zonder deze <code>marge</code> boven de onderkant zit.</p></li>
+<li><p><code>midden_x = .....; midden_y = ....;</code> zodat deze in het midden ligt.</p></li>
+</ol>
 </div>
 <div id="herhaling---functies" class="slide section level1">
 <h1>Herhaling - Functies</h1>
-<ul>
-<li>Een functie doet een klus voor je
-<ul>
-<li>teken een lijn blok</li>
-<li>print een waarde</li>
-<li>doet een instelling (<code>fill()</code>, <code>smooth()</code>)</li>
-</ul></li>
-<li>Een functie berekent een waarde voor je
-<ul>
-<li><code>max(1, 12, 3)</code></li>
-<li><code>a = 34 + max(1, 12, 3)</code></li>
-</ul></li>
-</ul>
-</div>
-<div id="herhaling---puntkomma" class="slide section level1">
-<h1>Herhaling - puntkomma</h1>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="fu">println</span>( <span class="fu">constrain</span>(<span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">100</span>) );
+<div class="figure">
+<img src="img/illusion.jpg" />
 
-<span class="co">// fout:                       *</span>
-<span class="fu">println</span>( <span class="fu">constrain</span>(<span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">100</span>); );</code></pre></div>
-<p>De <code>;</code> sluit een <em>statement</em> af, een (geneste) instructie.</p>
+</div>
+</div>
+<div id="herhaling---functies-2" class="slide section level1">
+<h1>Herhaling - Functies (2)</h1>
+<ul>
+<li><p><code>abs()</code></p></li>
+<li><p><code>constrain()</code></p></li>
+<li><p><code>line()</code></p></li>
+<li><p><code>draw()</code> en <code>setup()</code></p></li>
+</ul>
 </div>
 <div id="herhaling---active-en-static-modes" class="slide section level1">
 <h1>Herhaling - Active en Static Modes</h1>
@@ -192,35 +176,16 @@ Chris van Uffelen
 <span class="dt">void</span> <span class="fu">draw</span>() {
     <span class="fu">println</span>(<span class="st">&quot;draw&quot;</span>);
 }</code></pre></div>
+<p>Wat schrijft bovenstaande code?</p>
 </div>
-<div id="herhaling---scope" class="slide section level1">
-<h1>Herhaling - Scope</h1>
-<p><strong>global scope</strong>:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> hoogte;
-
-<span class="dt">void</span> <span class="fu">setup</span>() {
-    hoogte = <span class="dv">100</span>;
-}
-
-<span class="dt">void</span> <span class="fu">draw</span>() {
-    hoogte = hoogte + <span class="dv">10</span>;
-
-    <span class="co">// doe iets met hoogte</span>
-}</code></pre></div>
-</div>
-<div id="herhaling---declaratie-initialisatie" class="slide section level1">
-<h1>Herhaling - Declaratie, Initialisatie</h1>
-<p>Declaratie:</p>
+<div id="verkorte-schrijfwijzen" class="slide section level1">
+<h1>Verkorte schrijfwijzen</h1>
+<p>Wat is verschil tussen</p>
 <ul>
-<li>reserveer een stukje geheugen</li>
-<li>zeg wat het programma er in kan stoppen</li>
+<li><p><code>i = i + 1;</code></p></li>
+<li><p><code>i += 1;</code></p></li>
+<li><p><code>i++;</code></p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> a;</code></pre></div>
-<p>Initialisatie:</p>
-<ul>
-<li>vul het stukje geheugen met een waarde</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">a = <span class="dv">3</span>;</code></pre></div>
 </div>
 <div id="oefeningen" class="slide section level1">
 <h1>Oefeningen</h1>
