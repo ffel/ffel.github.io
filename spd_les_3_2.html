@@ -7,8 +7,45 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Chris van Uffelen" />
-  <title>Week 3, Les 1 SPD</title>
+  <title>SPD week 3, les 2</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
@@ -16,62 +53,358 @@
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Week 3, Les 1 SPD</h1>
+  <h1 class="title">SPD week 3, les 2</h1>
   <p class="author">
 Chris van Uffelen
   </p>
-  <p class="date">Sep 2015</p>
+  <p class="date">feb 2016</p>
 </div>
-<div id="vandaag" class="slide section level1">
-<h1>Vandaag</h1>
+<div id="welkom" class="slide section level1">
+<h1>Welkom!</h1>
 <ul>
-<li>We splitsen op Moduleopgave 4</li>
-<li>Samenvatting tot nu toe</li>
+<li><p>Aanwezigheidsregistratie</p></li>
+<li><p>In de volgende slides een aantal uitwerkingen</p>
+<p>Van wie is niet zo relevant</p>
+<p>We leren van elkaars code</p></li>
 </ul>
 </div>
-<div id="aanwezigheidsregistratie" class="slide section level1">
-<h1>Aanwezigheidsregistratie</h1>
+<div id="een" class="slide section level1">
+<h1>Een</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> wBreedte = <span class="dv">200</span>;
+<span class="dt">int</span> wHoogte = <span class="dv">200</span>;
+<span class="dt">boolean</span> lampKlik;
+<span class="dt">boolean</span> knipper;
+
+<span class="dt">int</span> lampSize = wBreedte/<span class="dv">5</span>;
+<span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="fu">size</span>(wBreedte, wHoogte);
+  <span class="fu">background</span>(<span class="dv">0</span>);
+  <span class="fu">textAlign</span>(CENTER);
+}
+
+<span class="dt">void</span> <span class="fu">draw</span>() {
+  <span class="fu">knop</span>();
+  <span class="kw">if</span> (lampKlik == <span class="kw">true</span>) {
+    <span class="fu">lampAan</span>();
+    <span class="kw">if</span> (knipper == <span class="kw">true</span>) {
+      <span class="fu">lampAan</span>(); 
+      knipper = !knipper;
+    } <span class="kw">else</span> <span class="kw">if</span> (knipper == <span class="kw">false</span>) {
+      <span class="fu">lampUit</span>();   
+      knipper = !knipper;
+    }
+  } <span class="kw">else</span> <span class="kw">if</span> (lampKlik == <span class="kw">false</span>) {
+    <span class="fu">lampUit</span>();
+  }
+  <span class="fu">delay</span>(<span class="dv">500</span>);
+}
+
+<span class="dt">void</span> <span class="fu">lampAan</span>() {
+  <span class="fu">fill</span>(<span class="dv">247</span>, <span class="dv">7</span>, <span class="dv">44</span>);
+  <span class="fu">ellipse</span>(<span class="dv">1</span>*wBreedte/<span class="dv">4</span>, wHoogte/<span class="dv">3</span>, lampSize, lampSize);
+  <span class="fu">fill</span>(<span class="dv">8</span>, <span class="dv">252</span>, <span class="dv">91</span>);
+  <span class="fu">ellipse</span>(<span class="dv">2</span>*wBreedte/<span class="dv">4</span>, wHoogte/<span class="dv">3</span>, lampSize, lampSize);
+  <span class="fu">fill</span>(<span class="dv">50</span>, <span class="dv">130</span>, <span class="dv">198</span>);
+  <span class="fu">ellipse</span>(<span class="dv">3</span>*wBreedte/<span class="dv">4</span>, wHoogte/<span class="dv">3</span>, lampSize, lampSize);
+}
+
+<span class="dt">void</span> <span class="fu">lampUit</span>() {
+  <span class="fu">fill</span>(<span class="dv">118</span>, <span class="dv">7</span>, <span class="dv">7</span>);
+  <span class="fu">ellipse</span>(<span class="dv">1</span>*wBreedte/<span class="dv">4</span>, wHoogte/<span class="dv">3</span>, lampSize, lampSize);
+  <span class="fu">fill</span>(<span class="dv">27</span>, <span class="dv">134</span>, <span class="dv">63</span>);
+  <span class="fu">ellipse</span>(<span class="dv">2</span>*wBreedte/<span class="dv">4</span>, wHoogte/<span class="dv">3</span>, lampSize, lampSize);
+  <span class="fu">fill</span>(<span class="dv">20</span>, <span class="dv">65</span>, <span class="dv">103</span>);
+  <span class="fu">ellipse</span>(<span class="dv">3</span>*wBreedte/<span class="dv">4</span>, wHoogte/<span class="dv">3</span>, lampSize, lampSize);
+}
+
+<span class="dt">void</span> <span class="fu">knop</span>() {
+  <span class="fu">fill</span>(<span class="dv">237</span>, <span class="dv">237</span>, <span class="dv">136</span>);
+  <span class="fu">rect</span>(wBreedte/<span class="dv">10</span>, wHoogte*<span class="fl">0.75</span>, lampSize*<span class="dv">4</span>, lampSize*<span class="fl">0.75</span>);
+  <span class="fu">fill</span>(<span class="dv">0</span>);
+  <span class="kw">if</span> (lampKlik == <span class="kw">true</span>) {
+    <span class="fu">text</span>(<span class="st">&quot;Zet uit&quot;</span>, wBreedte/<span class="dv">2</span>, wHoogte*<span class="fl">0.75</span>+wHoogte*<span class="fl">0.08</span>);
+  } <span class="kw">else</span> {
+    <span class="fu">text</span>(<span class="st">&quot;Zet Aan&quot;</span>, wBreedte/<span class="dv">2</span>, wHoogte*<span class="fl">0.75</span>+wHoogte*<span class="fl">0.08</span>);
+  }
+}
+
+<span class="dt">void</span> <span class="fu">klik</span>() {
+  <span class="kw">if</span> (mouseX &gt; wBreedte/<span class="dv">10</span> &amp;&amp; mouseX &lt; (wBreedte/<span class="dv">10</span>)+(lampSize*<span class="dv">4</span>)
+    &amp;&amp; mouseY &gt; wHoogte*<span class="fl">0.75</span> &amp;&amp; mouseY &lt; (wHoogte*<span class="fl">0.75</span>)+(lampSize*<span class="fl">0.75</span>)) {
+    lampKlik = !lampKlik;
+  }
+}
+
+<span class="dt">void</span> <span class="fu">mouseClicked</span>() {
+  <span class="fu">klik</span>();
+}</code></pre></div>
 </div>
-<div id="niet-inleveraars" class="slide section level1">
-<h1>Niet Inleveraars</h1>
-<ul>
-<li>We gaan samen een plan maken</li>
-<li>Iedereen voert individueel plan uit (overleg is prima)</li>
-<li>Ieder stuurt zijn resultaat naar <code>i1f.spd@gmail.com</code></li>
-<li>Maar eerst uitleg voor de inleveraars</li>
-</ul>
+<div id="twee" class="slide section level1">
+<h1>Twee</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">boolean</span> lampenAan;
+<span class="dt">boolean</span> ingeschakeld;
+
+<span class="dt">int</span> knopX, knopY, knopW, knopH;
+
+<span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="fu">size</span>(<span class="dv">500</span>, <span class="dv">300</span>);
+
+  <span class="fu">textAlign</span>(CENTER, CENTER);
+
+  knopX = width / <span class="dv">4</span>;
+  knopY = height * <span class="dv">5</span> / <span class="dv">7</span>;
+  knopW = width / <span class="dv">2</span>;
+  knopH = height / <span class="dv">7</span>;
+}
+
+<span class="dt">void</span> <span class="fu">draw</span>() {
+  <span class="fu">background</span>(<span class="dv">0</span>);
+
+  <span class="kw">if</span> (ingeschakeld) {
+    lampenAan = ! lampenAan;
+    <span class="kw">if</span> (lampenAan) {
+      <span class="fu">background</span>(<span class="dv">50</span>);
+      <span class="fu">tekenLampenAan</span>();
+    } <span class="kw">else</span> {
+      <span class="fu">tekenLampenUit</span>();
+    }
+    <span class="fu">delay</span> (<span class="dv">250</span>);
+  } <span class="kw">else</span> {
+    <span class="fu">tekenLampenUit</span>();
+  }
+
+  <span class="fu">tekenKnop</span>();
+}
+
+<span class="dt">void</span> <span class="fu">mouseClicked</span>() {
+  <span class="kw">if</span> (mouseX &gt; knopX &amp;&amp; mouseX &lt; knopX + knopW &amp;&amp;
+    mouseY &gt; knopY &amp;&amp; mouseY &lt; knopY + knopW) {
+    ingeschakeld = !ingeschakeld;
+  }
+}
+
+<span class="dt">void</span> <span class="fu">tekenLamp</span>(<span class="dt">int</span> lampX, <span class="dt">int</span> kleur) {
+  <span class="dt">int</span> lampY = <span class="dv">100</span>;
+  <span class="fu">fill</span>(#D3D3D3);
+  <span class="fu">rect</span>(lampX - <span class="dv">25</span>, lampY + <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">50</span>);
+  <span class="fu">fill</span>(kleur);
+  <span class="fu">ellipse</span>(lampX, lampY, <span class="dv">100</span>, <span class="dv">100</span>);
+}
+
+<span class="dt">void</span> <span class="fu">tekenLampenAan</span>() {
+  <span class="fu">tekenLamp</span>(width/<span class="dv">4</span>, #ff0000);
+  <span class="fu">tekenLamp</span>(width/<span class="dv">2</span>, #00ff00);
+  <span class="fu">tekenLamp</span>(width/<span class="dv">4</span>*<span class="dv">3</span>, #0000ff);
+}
+
+<span class="dt">void</span> <span class="fu">tekenLampenUit</span>() {
+  <span class="fu">tekenLamp</span>(width/<span class="dv">4</span>, #<span class="dv">550000</span>);
+  <span class="fu">tekenLamp</span>(width/<span class="dv">2</span>, #<span class="dv">005500</span>);
+  <span class="fu">tekenLamp</span>(width/<span class="dv">4</span>*<span class="dv">3</span>, #<span class="dv">000055</span>);
+}
+
+<span class="dt">void</span> <span class="fu">tekenKnop</span>() {
+  <span class="fu">fill</span>(<span class="dv">255</span>);
+  <span class="fu">rect</span>(knopX, knopY, knopW, knopH);
+  <span class="fu">fill</span>(<span class="dv">0</span>);
+  String label = <span class="st">&quot;zet uit&quot;</span>;
+  <span class="kw">if</span> (ingeschakeld) {
+    label = <span class="st">&quot;zet aan&quot;</span>;
+  }
+  <span class="fu">text</span>(label, knopX + knopW/<span class="dv">2</span>, knopY + knopH/<span class="dv">2</span>);
+}</code></pre></div>
 </div>
-<div id="inleveraars" class="slide section level1">
-<h1>Inleveraars</h1>
-<p>Deel 1 (in paren):</p>
-<ul>
-<li>Bespreek elkaars code</li>
-<li>Formuleer samen drie <strong>criteria</strong> naast
-<ul>
-<li>De applicatie werkt als bedoeld</li>
-</ul></li>
-<li>Samen een oplossing die aan de criteria voldoet.</li>
-</ul>
-<p>Deel 2 (in nieuwe paren):</p>
-<ul>
-<li>Bespreek en combineer de criteria</li>
-<li>Vul lijst met criteria op bord aan</li>
-<li>Bespreek ieders nieuwe oplossing adv criteria</li>
-<li>Pas je eigen oplossing aan</li>
-<li>Stuur je code en jullie criteria aan <code>i1f.spd@gmail.com</code></li>
-</ul>
+<div id="drie" class="slide section level1">
+<h1>Drie</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// Variabele </span>
+
+<span class="dt">int</span> windowWidth = <span class="dv">500</span>;
+<span class="dt">int</span> windowHeight = <span class="dv">300</span>;
+
+<span class="dt">boolean</span> lampOut = <span class="kw">false</span>;
+<span class="dt">boolean</span> blinking = <span class="kw">false</span>;
+
+
+<span class="co">// Setup die opstart</span>
+
+<span class="dt">void</span> <span class="fu">setup</span>() {
+  <span class="fu">size</span>(windowWidth, windowHeight);
+  <span class="fu">ellipseMode</span>(CORNER);
+}
+
+<span class="co">// Draw die lampen tekent en laat knipperen </span>
+
+<span class="dt">void</span> <span class="fu">draw</span>() {
+  <span class="fu">background</span>(<span class="dv">0</span>);
+  <span class="kw">if</span> (lampOut) {
+
+    <span class="fu">drawLamp</span>(width/<span class="dv">4</span>, <span class="dv">50</span>, #FF4646);
+    <span class="fu">drawLamp</span>(<span class="dv">200</span>, <span class="dv">50</span>, #64FF46);
+    <span class="fu">drawLamp</span>(<span class="dv">300</span>, <span class="dv">50</span>, #5654FC);
+  } <span class="kw">else</span> {
+
+    <span class="fu">drawLamp</span>(<span class="dv">100</span>, <span class="dv">50</span>, #<span class="fl">8E1313</span>);
+    <span class="fu">drawLamp</span>(<span class="dv">200</span>, <span class="dv">50</span>, #<span class="dv">117110</span>);
+    <span class="fu">drawLamp</span>(<span class="dv">300</span>, <span class="dv">50</span>, #<span class="dv">131190</span>);
+  }
+  <span class="kw">if</span> (blinking) {
+    lampOut = !lampOut;
+    <span class="fu">fill</span>(#23ECF5);
+    <span class="fu">rect</span>( windowWidth*<span class="fl">0.20</span>, windowHeight*<span class="fl">0.75</span>, windowWidth*<span class="fl">0.60</span>, windowHeight*<span class="fl">0.20</span>);
+    <span class="fu">textAlign</span>(CENTER);
+    <span class="fu">textSize</span>(<span class="dv">40</span>);
+    <span class="fu">fill</span>(#EA551A);
+    <span class="fu">text</span>(<span class="st">&quot;PRESS OFF &quot;</span>, windowWidth*<span class="fl">0.5</span>, windowHeight*<span class="fl">0.9</span> );
+  } <span class="kw">else</span> {
+    lampOut = <span class="kw">false</span>;
+    <span class="fu">fill</span>(#23ECF5);
+    <span class="fu">rect</span>( windowWidth*<span class="fl">0.20</span>, windowHeight*<span class="fl">0.75</span>, windowWidth*<span class="fl">0.60</span>, windowHeight*<span class="fl">0.20</span>);
+    <span class="fu">textAlign</span>(CENTER);
+    <span class="fu">textSize</span>(<span class="dv">40</span>);
+    <span class="fu">fill</span>(#EA551A);
+    <span class="fu">text</span>(<span class="st">&quot;PRESS ON &quot;</span>, windowWidth*<span class="fl">0.5</span>, windowHeight*<span class="fl">0.9</span> );
+  }
+
+  <span class="fu">delay</span>(<span class="dv">150</span>);
+}
+
+<span class="co">// Eigen methode voor lampen </span>
+
+<span class="dt">void</span> <span class="fu">drawLamp</span>(<span class="dt">int</span> xPosition, <span class="dt">int</span> yPosition, <span class="dt">int</span> collor) {
+
+  <span class="fu">fill</span>(<span class="dv">100</span>);
+  <span class="fu">rect</span>(xPosition +<span class="dv">20</span>, yPosition + <span class="dv">70</span>, <span class="dv">50</span>, <span class="dv">50</span>);
+  <span class="fu">fill</span>(collor);
+  <span class="fu">ellipse</span>(xPosition, yPosition, <span class="dv">90</span>, <span class="dv">90</span>);
+}
+
+<span class="co">// Mouseclick voor aan een uitzetten </span>
+
+<span class="dt">void</span> <span class="fu">mouseClicked</span>() {
+  <span class="kw">if</span> (mouseX &gt;= width*<span class="fl">0.2</span> &amp;&amp; mouseX &lt;= width * <span class="fl">0.8</span> &amp;&amp; mouseY &gt;= height*<span class="fl">0.75</span> &amp;&amp; mouseY &lt;= height*<span class="fl">0.95</span> ) { 
+    blinking = !blinking;
+  }
+}</code></pre></div>
 </div>
-<div id="herhaling" class="slide section level1">
-<h1>Herhaling ?</h1>
-<ul>
-<li><a href="https://play.kahoot.it/#/k/75b36d62-45e8-4ba7-82c5-8b9fbefab8c1">kahoot</a></li>
-</ul>
+<div id="vier" class="slide section level1">
+<h1>Vier</h1>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// Knop positie initialiseren</span>
+<span class="dt">int</span> butposx, butposy, butx, buty, textposx;
+<span class="dt">float</span> textposy;
+
+<span class="co">// Knop aan of uit</span>
+<span class="dt">boolean</span> knop = <span class="kw">false</span>;
+
+<span class="co">// Stroom op de lampjes</span>
+<span class="dt">boolean</span> stroom = <span class="kw">true</span>;
+
+<span class="co">// Standaardtekst op de knop</span>
+String tekst = <span class="st">&quot;Zet aan&quot;</span>;
+
+<span class="dt">void</span> <span class="fu">setup</span> () {
+  <span class="co">// Instellingen window</span>
+  <span class="fu">size</span> (<span class="dv">600</span>, <span class="dv">400</span>);
+  <span class="fu">background</span> (<span class="dv">0</span>);
+  <span class="fu">textSize</span> (<span class="dv">36</span>);
+  <span class="fu">textAlign</span> (CENTER);
+
+  <span class="co">// Knop- en tekstpositie</span>
+  butposx = width/<span class="dv">6</span>;
+  butposy = height/<span class="dv">5</span>*<span class="dv">4</span>;
+  butx = width/<span class="dv">6</span>*<span class="dv">4</span>;
+  buty = height/<span class="dv">6</span>;
+  textposx = width / <span class="dv">2</span>;
+  textposy = height/<span class="dv">5</span>*<span class="fl">4.5</span>;
+}
+
+<span class="dt">void</span> <span class="fu">draw</span> () {
+  <span class="co">// Maak het scherm volledig zwart</span>
+  <span class="fu">rectMode</span> (CORNER);
+  <span class="fu">fill</span> (#<span class="dv">000000</span>);
+  <span class="fu">rect</span> (<span class="dv">0</span>, <span class="dv">0</span>, width, height);
+
+  <span class="co">// Teken de knop en initialiseer de lampcontroller</span>
+  <span class="fu">tekenknop</span> ();
+  <span class="fu">lamphouders</span> ();
+  <span class="fu">lampcontroller</span> ();
+}
+
+<span class="dt">void</span> <span class="fu">mouseClicked</span> () {
+  <span class="co">// Switch voor de knoptekst</span>
+  <span class="kw">if</span> (mouseX &gt; butposx &amp;&amp; mouseX &lt; butposx + butx &amp;&amp; mouseY &gt; butposy &amp;&amp; mouseY &lt; butposy + buty) {
+    <span class="kw">if</span> (knop == <span class="kw">false</span>) {
+      tekst = <span class="st">&quot;Zet uit&quot;</span>;
+    } <span class="kw">else</span> {
+      tekst = <span class="st">&quot;Zet aan&quot;</span>;
+    }
+    knop = !knop;
+  }
+}
+
+<span class="dt">void</span> <span class="fu">tekenknop</span> () {
+  <span class="co">// Tekenen knop</span>
+  <span class="fu">fill</span> (#bbbbbb);
+  <span class="fu">rect</span> (butposx, butposy, butx, buty);
+
+  <span class="co">// Tekst op de knop schrijven</span>
+  <span class="fu">fill</span> (<span class="dv">0</span>);
+  <span class="fu">text</span> (tekst, textposx, textposy);
+  <span class="fu">fill</span> (#bbbbbb);
+}
+
+<span class="dt">void</span> <span class="fu">lamphouders</span> () {
+  <span class="co">// Lamphouders tekenen</span>
+  <span class="fu">rectMode</span> (CENTER);
+  <span class="fu">rect</span> (width/<span class="dv">3-30</span>, height/<span class="dv">3+40</span>, <span class="dv">80</span>, <span class="dv">80</span>);
+  <span class="fu">rect</span> (width/<span class="dv">2</span>, height/<span class="dv">3+40</span>, <span class="dv">80</span>, <span class="dv">80</span>);
+  <span class="fu">rect</span> ((width/<span class="dv">3</span>)*<span class="dv">2+30</span>, height/<span class="dv">3+40</span>, <span class="dv">80</span>, <span class="dv">80</span>);
+}
+
+<span class="dt">void</span> <span class="fu">lampcontroller</span> () {
+  <span class="co">// Switch voor de stroom op de lampjes</span>
+  <span class="kw">if</span> (knop == <span class="kw">true</span>) {
+    <span class="kw">if</span> (stroom == <span class="kw">true</span>) {
+      <span class="co">// Lampjes knipperen aan</span>
+      <span class="fu">lampaan</span> ();
+      <span class="fu">delay</span> (<span class="dv">100</span>);
+    } <span class="kw">else</span> {
+      <span class="co">// Lampjes knipperen uit</span>
+      <span class="fu">lampuit</span> ();
+      <span class="fu">delay</span> (<span class="dv">100</span>);
+    }
+    <span class="co">// Switch voor het knipperen</span>
+    stroom = !stroom;
+  } <span class="kw">else</span> {
+    <span class="co">// Lampjes uit</span>
+    <span class="fu">lampuit</span> ();
+  }
+}
+
+<span class="dt">void</span> <span class="fu">lampaan</span> () {
+  <span class="co">// Lampjes aanzetten</span>
+  <span class="fu">lamp</span> (#ff0000, width/<span class="dv">3-30</span>);
+  <span class="fu">lamp</span> (#00ff00, width/<span class="dv">2</span>);
+  <span class="fu">lamp</span> (#0000ff, (width/<span class="dv">3</span>)*<span class="dv">2+30</span>);
+}
+
+<span class="dt">void</span> <span class="fu">lampuit</span> () {
+  <span class="co">// Lampjes uitzetten</span>
+  <span class="fu">lamp</span> (#bb0000, width/<span class="dv">3-30</span>);
+  <span class="fu">lamp</span> (#00bb00, width/<span class="dv">2</span>);
+  <span class="fu">lamp</span> (#0000bb, (width/<span class="dv">3</span>)*<span class="dv">2+30</span>);
+}
+
+<span class="dt">void</span> <span class="fu">lamp</span> (<span class="dt">int</span> kleur, <span class="dt">int</span> xpositie) {
+  <span class="co">// Lampjes tekenen en inkleuren</span>
+  <span class="fu">fill</span> (kleur);
+  <span class="fu">ellipse</span> (xpositie, height/<span class="dv">3</span>, <span class="dv">120</span>, <span class="dv">120</span>);
+}</code></pre></div>
 </div>
-<div id="zelfstudie" class="slide section level1">
-<h1>Zelfstudie ????</h1>
-<ul>
-<li><a href="https://online.dr-chuck.com/">Dr. Chuck</a> (maar dit gaat je tijd kosten!)</li>
-</ul>
+<div id="socrative" class="slide section level1">
+<h1>Socrative</h1>
+</div>
+<div id="module-5" class="slide section level1">
+<h1>Module 5</h1>
 </div>
 </body>
 </html>
