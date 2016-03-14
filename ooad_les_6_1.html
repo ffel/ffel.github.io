@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>State Diagrams</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">State Diagrams</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">Maart 2016</p>
+</div>
+<div id="state-diagrams" class="slide section level1">
+<h1>State Diagrams</h1>
+<p>Behandeld in ESD: maak opgave 7.1</p>
+<blockquote>
+<p>aanwezigheidsregistratie</p>
+</blockquote>
+</div>
+<div id="state-diagrams-1" class="slide section level1">
+<h1>State Diagrams</h1>
+<ul>
+<li><p>behavioural</p>
+<p>net als UC en AD</p></li>
+<li><p>overgang door externe events</p></li>
+<li><p>geneste states / composite states</p></li>
+<li><p>Gebruik voor:</p>
+<ul>
+<li>Business Modeling</li>
+<li>Embedded Software</li>
+<li>UI</li>
+<li>Games</li>
+</ul></li>
+</ul>
+</div>
+<div id="eenvoudig-voorbeeld" class="slide section level1">
+<h1>Eenvoudig voorbeeld</h1>
+<div class="figure">
+<img src="sd_simple.png" />
+
+</div>
+</div>
+<div id="complexer-voorbeeld" class="slide section level1">
+<h1>Complexer voorbeeld</h1>
+<div class="figure">
+<img src="sd_complex.png" />
+
+</div>
+<!-- de inhoud van "serving customer" heeft meer weg van een AD -->
+</div>
+<div id="verlaten-van-een-sub-state" class="slide section level1">
+<h1>Verlaten van een Sub State</h1>
+<!--
+-   Je bereikt de *final state*
+
+    Volg de transitie zonder label vanaf de state.
+
+-   De super state vangt een van de aangegeven events op.
+
+    Deze staan als transitie met label als uitgang van de super
+    state aangegeven.
+
+-   Sub states zelf kunnen een overgang hebben naar een state buiten de
+    huidige composite state.
+-->
+<div class="figure">
+<img src="sd_leave_composite.png" />
+
+</div>
+</div>
+<div id="opgave-telefoon" class="slide section level1">
+<h1>Opgave Telefoon</h1>
+<div class="figure">
+<img src="sd_telephone.png" />
+
+</div>
+<p>Als je de hoorn van de haak neemt, hoor je een kiestoon. Vervolgens kun je één voor één de cijfers van het gewenste telefoonnummer intoetsen. Als het nummer compleet is, dan wordt er verbinding gemaakt. Zodra de telefoon wordt opgenomen door degene die je belt, kan het gesprek worden gestart.</p>
+<p><em>Opdracht</em>: Teken complete SD met substates van Active en bijbehorende toestandsovergangen die corresponderen met bovenstaand verhaal.</p>
+</div>
+<div id="regions" class="slide section level1">
+<h1>Regions</h1>
+<div class="figure">
+<img src="sd_regions.png" />
+
+</div>
+</div>
+<div id="junction-of-choice" class="slide section level1">
+<h1>Junction of Choice</h1>
+<div class="figure">
+<img src="sd_junction_choice.png" />
+
+</div>
+<ul>
+<li><p>Beide kunnen meerdere ingaande en uitgaande transities hebben.</p></li>
+<li><p>Bij alleen meerdere ingangen: gebruik <em>junction</em>.</p></li>
+<li><p>Subtiel verschil bij evaluatie van de <em>guards</em>.</p></li>
+</ul>
+</div>
+<div id="opgave-7.2---de-koelkast" class="slide section level1">
+<h1>Opgave 7.2 - de koelkast</h1>
+</div>
+<div id="eindopgave---karakters" class="slide section level1">
+<h1>Eindopgave - Karakters</h1>
+<p>Een karakter in een spel kan een aantal dingen doen. Hij kan stilstaan, wandelen of hardlopen. Aan het begin van het spel staat het karakter stil. Als het karakter aan het begin van het spel stil gaat staan, dan gaat hij onmiddellijk rondkijken. Staat hij in de buurt van een bekende dan begint hij een gesprek. Ziet hij een vijand dan slaakt hij een ijselijke kreet waarna hij het op een hardlopen zet. Het karakter is ongedurig van karakter. Hij kan, behalve als hij in gesprek gaat, maximaal 30 seconden stilstaan. Daarna moet hij echt wandelen. Een gesprek begint altijd met een hartelijke begroeting. Tijdens een gesprek spreekt en luistert het goed opgevoede karakter om de beurt. Aan het eind van een gesprek wordt afscheid genomen. Vervolgens gaat het karakter stilstaand rondkijken, op zoek naar nieuwe avonturen.</p>
+<p>De enige activiteit die het karakter tijdens het wandelen uitvoert is rondkijken, op zoek naar vrienden en bekenden en uitkijkend naar aan vijand. Als hij merkt dat hij moe wordt gaat hij stilstaan om uit te rusten. Ziet hij een vijand dan slaakt hij wederom een ijselijke kreet waarna hij het op een hardlopen zet. Hoewel het karakter ongedurig is, heeft het karakter het doorzettings- en uithoudingsvermogen van niets: na 30 seconden moet hij stilstaan om uit te rusten.</p>
+<p>Maak een state diagram van het karakter.</p>
+</div>
+<div id="huiswerk" class="slide section level1">
+<h1>Huiswerk</h1>
+<ul>
+<li><p>Opgave 7.3 (raid)</p></li>
+<li><p>Opgave 7.4 (ICA deur Arnhem)</p></li>
+</ul>
+</div>
+</body>
+</html>
