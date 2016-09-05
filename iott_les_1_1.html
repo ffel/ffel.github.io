@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chris van Uffelen" />
+  <title>Introductie C(ursus)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Introductie C(ursus)</h1>
+  <p class="author">
+Chris van Uffelen
+  </p>
+  <p class="date">Aug 2016</p>
+</div>
+<div id="welkom" class="slide section level1">
+<h1>Welkom!</h1>
+<ul>
+<li><p>Namen</p>
+<ul>
+<li><p>wie zijn wij?</p>
+<ul>
+<li><p><code>KeesJan.vandeLooij@han.nl</code></p></li>
+<li><p><code>Chris.vanUffelen@han.nl</code></p></li>
+</ul></li>
+<li><p>wie zijn jullie?</p>
+<p>(aanwezigheidsregistratie?)</p></li>
+</ul></li>
+<li><p>Wat verwachten jullie?</p></li>
+</ul>
+</div>
+<div id="opzet-cursus" class="slide section level1">
+<h1>Opzet cursus</h1>
+<ul>
+<li><p>Programmeren in C</p></li>
+<li><p>Elektronica</p></li>
+<li><p>Programmeren in Python</p></li>
+<li><p>Onderzoek</p></li>
+<li><p>Skills?</p></li>
+</ul>
+</div>
+<div id="doel-cursus" class="slide section level1">
+<h1>Doel Cursus?</h1>
+</div>
+<div id="organisatie" class="slide section level1">
+<h1>Organisatie</h1>
+<ul>
+<li><p>Les komende maandag</p>
+<p>Haal je ESD kennis op:</p>
+<ul>
+<li><p>Bouw een opstelling met temperatuur- en lichtsensor en potmeter.</p></li>
+<li><p>Zorg dat je de spanningsdeler een beetje snapt</p></li>
+</ul></li>
+<li><p>Les 10 oktober gaat 11 oktober</p></li>
+</ul>
+</div>
+<div id="c-cursus" class="slide section level1">
+<h1>C Cursus</h1>
+<ul>
+<li><p>Introductie C</p></li>
+<li><p>Introductie Cli</p></li>
+<li><p>Vandaag</p>
+<ul>
+<li><p>compileren</p></li>
+<li><p>variabelen</p></li>
+<li><p>tooling (<code>make</code> en <code>indent</code>)</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="c" class="slide section level1">
+<h1>C?</h1>
+<ul>
+<li>verschillen tussen Python en C</li>
+</ul>
+</div>
+<div id="hello-world" class="slide section level1">
+<h1>Hello World</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
+
+<span class="co">/* print een bericht voor de klas */</span>
+main() {
+    printf(<span class="st">&quot;Hallo %s!</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="st">&quot;IoT klas&quot;</span>);
+}</code></pre></div>
+</div>
+<div id="compileren" class="slide section level1">
+<h1>Compileren</h1>
+<pre class="cli"><code>$ gcc -Wall hallo.c -o hallo</code></pre>
+</div>
+<div id="opgave" class="slide section level1">
+<h1>Opgave</h1>
+<ul>
+<li><p>Compileer <code>hallo.c</code> en draai deze.</p></li>
+<li><p>Experimenteer met de code en het <code>gcc</code> command en let op welke fouten je krijgt.</p></li>
+</ul>
+</div>
+<div id="code-in-meerdere-bestanden" class="slide section level1">
+<h1>Code in meerdere bestanden</h1>
+<p><code>main.c</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">main() {
+    greet();
+}</code></pre></div>
+<p><code>greet.c</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> greet()
+{
+    printf(<span class="st">&quot;hallo klas!</span><span class="ch">\n</span><span class="st">&quot;</span>);
+}</code></pre></div>
+</div>
+<div id="opgave-1" class="slide section level1">
+<h1>Opgave</h1>
+<p>compileer met:</p>
+<pre class="cli"><code>$ gcc main.c greet.c</code></pre>
+<ul>
+<li><p>Hoe kan je de code in de bestanden aanpassen zodat deze compileert?</p>
+<ul>
+<li><code>-Wall</code> helpt wellicht een beetje</li>
+</ul></li>
+</ul>
+</div>
+<div id="antwoord---header-files" class="slide section level1">
+<h1>Antwoord - Header Files</h1>
+<p><code>greet.h</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
+
+<span class="dt">void</span> greet();</code></pre></div>
+<p><code>greet.c</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &quot;greet.h&quot;</span>
+
+<span class="dt">void</span> greet()
+{
+    printf(<span class="st">&quot;hallo klas!</span><span class="ch">\n</span><span class="st">&quot;</span>);
+}</code></pre></div>
+</div>
+<div id="antwoord-2" class="slide section level1">
+<h1>Antwoord (2)</h1>
+<p><code>main.c</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &quot;greet.h&quot;</span>
+
+main() {
+    greet();
+}</code></pre></div>
+</div>
+<div id="header-files" class="slide section level1">
+<h1>Header Files</h1>
+<ul>
+<li><p>Een <code>h</code> file bevat dat gedeelte van de bijbehorende <code>c</code> file dat je beschikbaar wilt maken.</p></li>
+<li><p>Er is een complicatie.</p></li>
+</ul>
+</div>
+<div id="lees-een-h-file-maximaal-één-keer-in" class="slide section level1">
+<h1>Lees een h file maximaal één keer in</h1>
+<p><code>greet.h</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#ifdef greet_h</span>
+<span class="ot">#define greet_h</span>
+
+<span class="ot">#include &lt;stdio.h&gt;</span>
+
+<span class="dt">void</span> greet();
+
+<span class="ot">#endif</span></code></pre></div>
+<ul>
+<li>Ook wordt <code class="sourceCode c"><span class="ot">#pragma once</span></code> gebruikt.</li>
+</ul>
+</div>
+<div id="opgave-2" class="slide section level1">
+<h1>Opgave</h1>
+<ul>
+<li>Compileer nu het vorige voorbeeld.</li>
+</ul>
+</div>
+<div id="compileren-1" class="slide section level1">
+<h1>Compileren</h1>
+<pre class="cli"><code>$ gcc -c greet.c
+$ gcc -c main.c
+$ gcc main.o greet.o -o hoi</code></pre>
+</div>
+<div id="variabelen" class="slide section level1">
+<h1>Variabelen</h1>
+<p>Variabelen printen:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">printf(<span class="st">&quot;hallo&quot;</span>);
+printf(<span class="st">&quot;hallo</span><span class="ch">\n</span><span class="st">&quot;</span>);
+<span class="dt">int</span> i = <span class="dv">12</span>;
+printf(<span class="st">&quot;i = %d</span><span class="ch">\n</span><span class="st">&quot;</span>, i);
+printf(<span class="st">&quot;welkom bij %s in het jaar %d!</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="st">&quot;IoT&quot;</span>, <span class="dv">2014+2</span>);</code></pre></div>
+<ul>
+<li>meer info met <code>man 3 printf</code>.</li>
+</ul>
+</div>
+<div id="integer-waarden" class="slide section level1">
+<h1>Integer waarden</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
+
+<span class="dt">int</span> main()
+{
+    <span class="dt">char</span> c;
+    <span class="dt">short</span> s;
+    <span class="dt">int</span> i;
+    <span class="dt">long</span> l;
+    <span class="dt">unsigned</span> <span class="dt">long</span> ul;
+    <span class="dt">long</span> <span class="dt">long</span> ll;
+
+    printf(<span class="st">&quot;c: %zu, s: %zu, i: %zu, l: %zu, ul: %zu, ll: %zu&quot;</span>,
+       <span class="kw">sizeof</span>(c), <span class="kw">sizeof</span>(s), <span class="kw">sizeof</span>(i), <span class="kw">sizeof</span>(l),
+       <span class="kw">sizeof</span>(ul), <span class="kw">sizeof</span>(ll));
+}</code></pre></div>
+</div>
+<div id="integer-waarden-2" class="slide section level1">
+<h1>Integer waarden (2)</h1>
+<ul>
+<li><p>aantal bytes verschilt van architectuur en compiler (?)</p></li>
+<li><p>waarom niet gewoon altijd <code>long long</code>?</p></li>
+</ul>
+</div>
+<div id="daarom" class="slide section level1">
+<h1>Daarom</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;stdlib.h&gt;</span>
+<span class="ot">#include &lt;stdio.h&gt;</span>
+
+<span class="dt">int</span> main()
+{
+    <span class="dt">int8_t</span> i8;
+    <span class="dt">int16_t</span> i16;
+    <span class="dt">int32_t</span> i32;
+    <span class="dt">int64_t</span> i64;
+
+    printf(<span class="st">&quot;i8: %zu, i16: %zu, i32: %zu, i64: %zu</span><span class="ch">\n</span><span class="st">&quot;</span>,
+       <span class="kw">sizeof</span>(i8), <span class="kw">sizeof</span>(i16), <span class="kw">sizeof</span>(i32), <span class="kw">sizeof</span>(i64));
+}</code></pre></div>
+<ul>
+<li>Bestaan <code>uint8_t</code> en varianten ook?</li>
+</ul>
+</div>
+<div id="aside---preprocessor" class="slide section level1">
+<h1>Aside - Preprocessor</h1>
+<ul>
+<li><p>We hebben al een aantal <code>#include</code>, <code>#define</code> etc gezien.</p></li>
+<li><p>Dit zijn instructies voor de <em>pre processor</em></p></li>
+<li><p>Je kan de preprocessor ook anders gebruiken</p></li>
+</ul>
+</div>
+<div id="define-vs-const" class="slide section level1">
+<h1>Define vs Const</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
+
+<span class="ot">#define QUESTION &quot;What is the meaning of life?&quot;</span>
+<span class="dt">const</span> <span class="dt">int</span> answer = <span class="dv">42</span>;
+
+<span class="dt">int</span> main()
+{
+    printf(<span class="st">&quot;Q: %s, A: %d</span><span class="ch">\n</span><span class="st">&quot;</span>, QUESTION, answer);
+}</code></pre></div>
+<ul>
+<li><p>Strings zijn <em>lastiger</em>, en <code>#define</code> helpt soms een beetje</p></li>
+<li><p><code>const</code> respecteert scope.</p></li>
+</ul>
+</div>
+<div id="tooling" class="slide section level1">
+<h1>Tooling</h1>
+<ul>
+<li><p>formateren met <code>indent -kr</code></p></li>
+<li><p>compileren met <code>make</code></p></li>
+</ul>
+</div>
+<div id="make" class="slide section level1">
+<h1>Make</h1>
+<p>Een programma van één bestand kan je compileren met make:</p>
+<p>Ons voorbeeld <code>hallo.c</code>:</p>
+<pre class="cli"><code>$ make hallo</code></pre>
+<ul>
+<li>kijk naar de uitvoer!</li>
+</ul>
+</div>
+<div id="make-opties" class="slide section level1">
+<h1>Make opties</h1>
+<p>We vergeten steeds <code>-Wall</code>, toch?</p>
+<p>Zet in <code>Makefile</code></p>
+<div class="sourceCode"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span class="dt">CFLAGS</span><span class="ch">=</span><span class="st">-Wall</span></code></pre></div>
+</div>
+<div id="make-afhankelijkheden" class="slide section level1">
+<h1>Make afhankelijkheden</h1>
+<p><code>main.c</code> hing af van <code>greet.c</code>:</p>
+<p>Dit kan je aangeven in je <code>Makefile</code>:</p>
+<div class="sourceCode"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span class="dt">CFLAGS</span><span class="ch">=</span><span class="st">-Wall</span>
+
+<span class="dv">main:</span><span class="dt"> greet.o</span></code></pre></div>
+<ul>
+<li><p>wat zie je als je <code>make</code> uitvoert?</p></li>
+<li><p>wat zie je als je alle <code>*.o</code> bestanden verwijdert?</p></li>
+</ul>
+</div>
+<div id="verder-informatie-over-c" class="slide section level1">
+<h1>Verder informatie over C</h1>
+<ul>
+<li><p><a href="https://learnxinyminutes.com/docs/c/" class="uri">https://learnxinyminutes.com/docs/c/</a></p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" class="uri">https://en.wikipedia.org/wiki/The_C_Programming_Language</a></p></li>
+<li><p><a href="https://learncodethehardway.org/c/" class="uri">https://learncodethehardway.org/c/</a></p></li>
+</ul>
+</div>
+<div id="huiswerk" class="slide section level1">
+<h1>Huiswerk</h1>
+<ul>
+<li>Zie werkboek onderwijs online</li>
+</ul>
+</div>
+</body>
+</html>
